@@ -162,8 +162,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
-
-<!-- ola -->
-    <!-- kkkkkkkkkk -->
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
