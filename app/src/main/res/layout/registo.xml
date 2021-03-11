@@ -34,13 +34,13 @@
         android:id="@+id/button2"
         android:layout_width="350dp"
         android:layout_height="46dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/buttonlogin"
         android:text="Registar"
         android:textStyle="bold"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <TextView
         android:id="@+id/textView21"
@@ -90,10 +90,10 @@
         android:textSize="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -156,7 +156,7 @@
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <EditText
         android:id="@+id/editText"
@@ -190,10 +190,10 @@
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.086" />
 
     <TextView
         android:id="@+id/textView31"
@@ -290,5 +290,28 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="350"
+        android:layout_height="46"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comfirmar Password"
+        android:textColor="#13497B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
