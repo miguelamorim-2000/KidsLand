@@ -42,7 +42,8 @@
         android:textColor="#13497B"
         android:textSize="14sp"
         tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="533dp" />
+        tools:layout_editor_absoluteY="533dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextData"
