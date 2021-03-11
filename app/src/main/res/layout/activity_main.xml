@@ -8,7 +8,7 @@
 
 
 
-    <include layout="@layout/registo" />
+    <include layout="@layout/definitions" />
 
 
 
