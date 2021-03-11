@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F8FBFF">
+
+    <Button
+        android:id="@+id/gameButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5.84dp"
+        android:layout_marginLeft="5.84dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/ic_game"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#46D0D9"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/ic_baseline_settings_24"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="292dp"
+        android:layout_marginRight="292dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/ic_exit"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="251dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/rubik_light"
+        android:lineSpacingExtra="30.81sp"
+        android:text="ATIVIDADES PARA TI"
+        android:textColor="#143656"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/gameButton"
+        tools:layout_editor_absoluteY="116dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
