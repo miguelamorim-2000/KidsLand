@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="419dp"
         android:layout_height="734dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="200dp"
         android:contentDescription="@android:string/untitled"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,20 +41,20 @@
         android:text="Faixa Etária:"
         android:textColor="#13497B"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextFaixa"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="498dp" />
+        tools:layout_editor_absoluteX="169dp" />
 
     <EditText
         android:id="@+id/editTextTextData"
         android:layout_width="203dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintBottom_toTopOf="@+id/textFaixa"
+        app:layout_constraintHorizontal_bias="0.826"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -66,15 +66,17 @@
         android:text="Data de Nascimento:"
         android:textColor="#13497B"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextData"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="430dp" />
+        tools:layout_editor_absoluteX="169dp" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,12 +111,12 @@
         android:id="@+id/editTextTextNome"
         android:layout_width="203dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintBottom_toTopOf="@+id/textData"
+        app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -122,7 +124,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/buttonlogin"
         android:text="Criar"
         android:textStyle="bold"
@@ -140,9 +142,9 @@
         android:text="Nome de utilizador:"
         android:textColor="#13497B"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextNome"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="358dp" />
+        tools:layout_editor_absoluteX="169dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
