@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#46D0D9">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="419dp"
+        android:layout_height="734dp"
+        android:layout_marginTop="190dp"
+        android:contentDescription="@android:string/untitled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vetor1" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="Data de Nascimento:"
+        android:textColor="#13497B"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="Email:"
+        android:textColor="#13497B"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="Password"
+        android:textColor="#13497B"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress4"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress5" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress5"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+
+    <ImageView
+        android:id="@+id/guardar_dados"
+        android:layout_width="311dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="696dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buttonlogin" />
+
+    <TextView
+        android:id="@+id/guardar_dados_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/rubik_light"
+        android:text="Guardar Dados"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/guardar_dados"
+        app:layout_constraintStart_toStartOf="@+id/guardar_dados"
+        app:layout_constraintTop_toTopOf="@+id/guardar_dados" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="4dp"
+        android:text="Nome:"
+        android:textColor="#13497B"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/woman"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <TextView
+        android:id="@+id/editar_foto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginLeft="172dp"
+        android:text="Editar Foto"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <TextView
+        android:id="@+id/editar_dados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/rancho"
+        android:text="Editar Dados"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress5"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress5"
+        app:srcCompat="@drawable/subtract" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress4"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress4"
+        app:srcCompat="@drawable/subtract" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress2"
+        app:srcCompat="@drawable/subtract" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress"
+        app:srcCompat="@drawable/group" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView18"
+        app:layout_constraintTop_toTopOf="@+id/imageView18"
+        app:srcCompat="@drawable/vector" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

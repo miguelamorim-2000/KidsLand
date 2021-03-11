@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#46D0D9"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="419dp"
+        android:layout_height="734dp"
+        android:layout_marginTop="176dp"
+        android:contentDescription="@android:string/untitled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vetor1" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName8"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="18dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Utilizador 1"
+        android:textColor="#143656"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName9"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="18dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Utilizador 2"
+        android:textColor="#143656"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="18dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Utilizador 3"
+        android:textColor="#143656"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="0.052" />
+
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="343dp"
+        android:background="@drawable/buttonlogin"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="204dp"
+        android:background="@drawable/buttonlogin"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="204dp"
+        android:background="@drawable/buttonlogin"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="164dp"
+        android:layout_height="61dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="70dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Bem-Vindo !"
+        android:textColor="#143656"
+        android:textSize="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageView3"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="223dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Quem está desse lado?"
+        android:textColor="#143656"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="204dp"
+        android:background="@drawable/buttonlogin"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="67dp"
+        android:layout_height="72dp"
+        android:drawableBottom="@drawable/plus"
+        android:visibility="visible"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

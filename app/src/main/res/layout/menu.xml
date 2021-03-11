@@ -7,40 +7,71 @@
     android:background="#F8FBFF">
 
     <Button
-        android:id="@+id/gameButton"
+        android:id="@+id/button3"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="59dp"
+
         android:layout_marginLeft="59dp"
-        android:layout_marginTop="285dp"
-        android:background="@drawable/ic_game"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/ic_puzzle_game"
         app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sugestionsButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/factsButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/prizesButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginRight="59dp"
+        android:background="@drawable/prize"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/factsButton"
+        app:layout_constraintTop_toBottomOf="@+id/mapButton" />
 
     <Button
         android:id="@+id/mapButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginLeft="91dp"
         android:layout_marginTop="285dp"
         android:layout_marginEnd="59dp"
         android:layout_marginRight="59dp"
         android:background="@drawable/ic_map"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gameButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/prizesButton"
+        android:id="@+id/gameButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:background="@drawable/prize"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="285dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginBottom="53dp"
+        android:background="@drawable/ic_game"
         app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/factsButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapButton" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/sugestionsButton"
@@ -61,8 +92,11 @@
         android:layout_marginStart="59dp"
         android:layout_marginLeft="59dp"
         android:layout_marginTop="53dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginRight="250dp"
         android:background="@drawable/ic_buildings"
         app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameButton" />
 
@@ -70,12 +104,17 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginLeft="123dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
+        android:layout_marginBottom="550dp"
+        android:background="@drawable/ic_base"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_base" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/welcometxt"
