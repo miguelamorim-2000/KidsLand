@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#46D0D9"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
     <ImageView
@@ -85,37 +84,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextTitulo"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/editTextTextTitulo"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         android:background="@null"
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Visualizar dados"
+        android:text="Visualizar Dados"
         android:textColor="#143656"
         android:textSize="38dp"
-        app:flow_horizontalAlign="start"
-        app:flow_verticalAlign="baseline"
-        app:layout_constraintBottom_toTopOf="@+id/textNome"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.491"
-        tools:ignore="MissingPrefix" />
+        app:layout_constraintTop_toTopOf="@id/imageView3"
+        app:layout_constraintVertical_bias="0.39" />
 
     <EditText
         android:id="@+id/editTextTextNome"
@@ -170,14 +163,15 @@
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="97dp"
-        android:layout_height="108dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="200dp"
-        android
+        android:layout_height="97dp"
+        android:layout_marginBottom="196dp"
+        android:background="@drawable/ic_avatar_svgrepo_com"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextData"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextTitulo"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
