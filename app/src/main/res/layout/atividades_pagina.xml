@@ -62,15 +62,17 @@
         android:id="@+id/textView13"
         android:layout_width="251dp"
         android:layout_height="31dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
         android:text="ATIVIDADES PARA TI"
         android:textColor="#143656"
         android:textSize="26sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/gameButton"
-        tools:layout_editor_absoluteY="116dp" />
+        tools:layout_editor_absoluteY="117dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
