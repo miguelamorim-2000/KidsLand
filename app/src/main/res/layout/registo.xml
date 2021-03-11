@@ -34,12 +34,12 @@
         android:id="@+id/button2"
         android:layout_width="352dp"
         android:layout_height="39dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/buttonlogin"
         android:text="Registar"
         android:textStyle="bold"
         app:backgroundTint="@null"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <TextView
@@ -155,7 +155,7 @@
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <EditText
         android:id="@+id/editText"
@@ -171,8 +171,8 @@
 
     <EditText
         android:id="@+id/editTextTextPassword3"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
@@ -292,14 +292,16 @@
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="350"
-        android:layout_height="46"
+        android:layout_width="170dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
         android:id="@+id/textView14"
@@ -307,7 +309,7 @@
         android:layout_height="wrap_content"
         android:text="Confitmar Password"
         android:textColor="#13497B"
-        android:textStyle="bold"
+        android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword" />
 
