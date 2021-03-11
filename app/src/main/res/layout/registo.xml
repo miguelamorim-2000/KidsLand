@@ -292,8 +292,8 @@
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="350"
-        android:layout_height="46"
+        android:layout_width="159dp"
+        android:layout_height="37dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
