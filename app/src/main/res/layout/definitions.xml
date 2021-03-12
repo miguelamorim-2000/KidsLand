@@ -131,7 +131,7 @@
         app:layout_constraintStart_toEndOf="@+id/editTextTextEmailAddress"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintVertical_bias="0.0"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo1" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -150,7 +150,7 @@
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintVertical_bias="0.133"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo1" />
 
     <ImageView
         android:id="@+id/imageView20"
@@ -169,7 +169,7 @@
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress4"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress4"
         app:layout_constraintVertical_bias="0.0"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
