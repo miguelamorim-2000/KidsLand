@@ -22,13 +22,14 @@
         android:fontFamily="@font/rubik_light"
         android:gravity="left|center_vertical"
         android:inputType="textEmailAddress"
-        android:text="Localização"
+        android:text="@string/localiza_o"
         android:textColor="#000000"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <Button
         android:id="@+id/editTextTextEmailAddress2"
@@ -43,13 +44,14 @@
         android:fontFamily="@font/rubik_light"
         android:gravity="left|center_vertical"
         android:inputType="textEmailAddress"
-        android:text="Armazenamento"
+        android:text="@string/armazenamento"
         android:textColor="#000000"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <Button
         android:id="@+id/editTextTextEmailAddress4"
@@ -66,13 +68,14 @@
         android:fontFamily="@font/rubik_light"
         android:gravity="left|center_vertical"
         android:inputType="textEmailAddress"
-        android:text="Câmara"
+        android:text="@string/c_mara"
         android:textColor="#000000"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
+        tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <TextView
         android:id="@+id/textView3"
@@ -84,15 +87,16 @@
         android:layout_marginRight="125dp"
         android:layout_marginBottom="512dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="Definições"
+        android:text="@string/defini_es"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#143656"
-        android:textSize="26dp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        tools:ignore="UnknownIdInLayout" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -107,7 +111,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/icon" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -125,7 +130,8 @@
         app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toEndOf="@+id/editTextTextEmailAddress"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -143,7 +149,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.133"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView20"
@@ -161,7 +168,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress4"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/todo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

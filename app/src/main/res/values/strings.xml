@@ -9,4 +9,35 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="utilizador_2">Utilizador 2</string>
+    <string name="bem_vindo">Bem-Vindo !</string>
+    <string name="utilizador_3">Utilizador 3</string>
+    <string name="utilizador_1">Utilizador 1</string>
+    <string name="logo">Logo</string>
+    <string name="quem_est_desse_lado">Quem está desse lado?</string>
+    <string name="atividades_para_ti">ATIVIDADES PARA TI</string>
+    <string name="string_atividades_para_ti">ATIVIDADES PARA TI</string>
+    <string name="seleciona_as_estrelinhas">Seleciona as estrelinhas!</string>
+    <string name="diz_nos_se_gostaste">DIZ-NOS SE GOSTASTE!</string>
+    <string name="quantas_mais_estrelinhas_mais_gostaste">Quantas mais estrelinhas, mais gostaste!</string>
+    <string name="logo">Logo</string>
+    <string name="criar">Criar</string>
+    <string name="crie_o_seu_perfil">Crie o seu Perfil !</string>
+    <string name="nome_de_utilizador">Nome de Utilizador:</string>
+    <string name="data_de_nascimento">Data de Nascimento:</string>
+    <string name="localiza_o">Localização</string>
+    <string name="armazenamento">Armazenamento</string>
+    <string name="c_mara">Câmara</string>
+    <string name="defini_es">Definições</string>
+    <string name="icon">Icon</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="faixa_et_ria">Faixa Etária:</string>
+    <string name="data_de_nascimento">Data de Nascimento:</string>
+    <string name="logo">Logo</string>
+    <string name="visualizar_dados">Visualizar Dados</string>
+    <string name="criar">Criar</string>
+    <string name="nome_de_utilizador1">Nome de utilizador:</string>
+    <string name="icon">Icon</string>
 </resources>

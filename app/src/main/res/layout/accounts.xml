@@ -28,15 +28,17 @@
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Utilizador 1"
+        android:text="@string/utilizador_1"
         android:textColor="#143656"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.052"
+        tools:ignore="TextViewEdits"
+        android:layout_marginStart="18dp" />
 
     <TextView
         android:id="@+id/editTextTextPersonName9"
@@ -47,15 +49,17 @@
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Utilizador 2"
+        android:text="@string/utilizador_2"
         android:textColor="#143656"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.052"
+        android:layout_marginStart="18dp"
+        tools:ignore="TextViewEdits" />
 
     <TextView
         android:id="@+id/editTextTextPersonName7"
@@ -66,15 +70,17 @@
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Utilizador 3"
+        android:text="@string/utilizador_3"
         android:textColor="#143656"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.855"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.052"
+        tools:ignore="TextViewEdits"
+        android:layout_marginStart="18dp" />
 
 
     <Button
@@ -127,7 +133,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/editTextTextPersonName"
@@ -139,14 +146,16 @@
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Bem-Vindo !"
+        android:text="@string/bem_vindo"
         android:textColor="#143656"
-        android:textSize="38dp"
+        android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/imageView3"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.39"
+        android:layout_marginStart="16dp"
+        tools:ignore="TextViewEdits" />
 
     <TextView
         android:id="@+id/editTextTextPersonName2"
@@ -158,15 +167,17 @@
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Quem está desse lado?"
+        android:text="@string/quem_est_desse_lado"
         android:textColor="#143656"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.153"
+        android:layout_marginStart="18dp"
+        tools:ignore="TextViewEdits" />
 
     <Button
         android:id="@+id/button"
