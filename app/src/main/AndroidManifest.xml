@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsLand">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".PremiosActivity" />
+        <activity android:name=".InscreverAtividadeActivity" />
+        <activity android:name=".FactosActivity" />
+        <activity android:name=".EditarDadosLoginActivity" />
+        <activity android:name=".VisualizarDadosCriancaActivity" />
+        <activity android:name=".DefinicoesActivity" />
+        <activity android:name=".CriarPerfilActivity" />
+        <activity android:name=".AvalicaoAtividadesActivity" />
+        <activity android:name=".PaginaAtividadesActivity" />
+        <activity android:name=".AccountsActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

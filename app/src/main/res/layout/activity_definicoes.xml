@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FBFF">
-
+    android:background="#F8FBFF"
+    tools:context=".DefinicoesActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar5"
@@ -213,6 +213,4 @@
         app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress4"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress4"
         app:layout_constraintVertical_bias="0.0" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

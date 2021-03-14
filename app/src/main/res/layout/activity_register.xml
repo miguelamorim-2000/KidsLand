@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
     android:background="#46D0D9">
 
     <ImageView
@@ -240,7 +241,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="0dp" />
+        app:layout_constraintGuide_end="807dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
