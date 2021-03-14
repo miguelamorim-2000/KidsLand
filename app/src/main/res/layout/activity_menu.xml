@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FBFF"
-    tools:context=".Menu">
-
-
+    tools:context=".MenuActivity">
 
     <Button
         android:id="@+id/button3"
@@ -187,6 +184,5 @@
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
