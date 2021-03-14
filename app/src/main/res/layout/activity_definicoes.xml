@@ -82,6 +82,12 @@
         android:id="@+id/editTextTextEmailAddress7"
         android:layout_width="357dp"
         android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="293dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="26dp"
         android:background="#143656"
         android:ems="10"
         android:fontFamily="@font/rubik_light"
@@ -91,9 +97,11 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:backgroundTint="@null"
-        tools:ignore="RtlHardcoded,TextViewEdits"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="734dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4"
+        tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <Button
         android:id="@+id/editTextTextEmailAddress4"

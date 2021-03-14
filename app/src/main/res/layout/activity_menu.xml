@@ -162,7 +162,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/defitionsButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:background="@drawable/ic_baseline_settings_24"
