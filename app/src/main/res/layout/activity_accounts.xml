@@ -83,7 +83,7 @@
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/submitbutton"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="10dp"
@@ -102,7 +102,7 @@
         android:layout_height="90dp"
         android:background="@drawable/buttonlogin"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/submitbutton"
         app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -115,7 +115,7 @@
         android:layout_height="90dp"
         android:background="@drawable/buttonlogin"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/submitbutton"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -184,7 +184,7 @@
         android:layout_height="90dp"
         android:background="@drawable/buttonlogin"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/submitbutton"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -198,10 +198,10 @@
         android:drawableBottom="@drawable/plus"
         android:visibility="visible"
         app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="@+id/submitbutton"
+        app:layout_constraintEnd_toEndOf="@+id/submitbutton"
+        app:layout_constraintStart_toStartOf="@+id/submitbutton"
+        app:layout_constraintTop_toTopOf="@+id/submitbutton"
         tools:visibility="visible" />
 
 
