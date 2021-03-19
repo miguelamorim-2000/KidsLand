@@ -40,7 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         btnActivities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.PaginaAtividadesActivity.class);
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.testePrincipal.class);
                 startActivity(intent);
                 finish();
 
