@@ -3,9 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    tools:context=".teste1">
+    android:layout_height="match_parent"
+    android:background="#F8FBFF"
+    app:cardBackgroundColor="#F8FBFF"
+    tools:context=".AtividadesList">
 
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/ic_back"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@id/toolbar9"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="@id/toolbar9"
+        app:layout_constraintTop_toTopOf="@id/toolbar9" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:background="#46D0D9"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/defitionsButton2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="348dp"
+        android:layout_marginLeft="348dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ic_baseline_settings_24"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView20"
@@ -31,18 +78,21 @@
         android:layout_marginTop="100dp"
         app:srcCompat="@drawable/ic_game"
         tools:ignore="VectorDrawableCompat" />
--->
+    -->
+
     <LinearLayout
         android:id="@+id/containerActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_height="611dp"
+        android:layout_marginTop="200dp"
+        android:background="#F8FBFF"
         android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/container2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:background="#F8FBFF">
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -74,6 +124,14 @@
                 android:layout_marginTop="50dp"
                 android:textColor="#143656"
                 android:textSize="14dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
         </RelativeLayout>
 
 

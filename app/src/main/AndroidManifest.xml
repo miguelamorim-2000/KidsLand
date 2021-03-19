@@ -12,8 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsLand">
-        <activity android:name=".testePrincipal"></activity>
-        <activity android:name=".teste1" />
+        <activity android:name=".AtividadesList"></activity>
+        <activity android:name=".SingleAdapter" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PremiosActivity" />
         <activity android:name=".InscreverAtividadeActivity" />
