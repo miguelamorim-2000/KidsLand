@@ -13,10 +13,10 @@ import java.util.ArrayList;
 
 public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAdapter.ViewHolder> {
 
-    ArrayList<String> titles;
+    ArrayList<ListItem> items;
 
-    public AtividadesListAdapter(ArrayList<String> nomes){
-        titles = nomes;
+    public AtividadesListAdapter(ArrayList<ListItem> listItems){
+        items = listItems;
     }
     @Override
     public AtividadesListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -26,21 +26,26 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
 
     @Override
     public void onBindViewHolder(@NonNull AtividadesListAdapter.ViewHolder holder, int position) {
-    holder.title.setText(titles.get(position));
-    holder.itemView.findViewById(R.id.containerActivity).setBackgroundColor(Color.parseColor("#F8FBFF"));
+        holder.title.setText(items.get(position).getTittle());
+        holder.description.setText(items.get(position).getLocation());
+        holder.itemView.findViewById(R.id.containerActivity).setBackgroundColor(Color.parseColor("#F8FBFF"));
     }
 
     @Override
     public int getItemCount() {
-        return titles.size();
+        return items.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-    public TextView title;
+        public TextView title;
+        public TextView description;
 
-    public ViewHolder (View itemView){
-        super (itemView);
-        title = itemView.findViewById(R.id.textTitle);
+        public ViewHolder (View itemView){
+            super (itemView);
+            title = itemView.findViewById(R.id.textTitle);
+            description = itemView.findViewById(R.id.textLocation);
+        }
     }
-    }
+
+
 }

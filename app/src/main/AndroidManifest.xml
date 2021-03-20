@@ -11,9 +11,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KidsLand">
+        android:theme="@style/Theme.KidsLand"
+        android:usesCleartextTraffic="true">
         <activity android:name=".AtividadesList"></activity>
-        <activity android:name=".SingleAdapter" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PremiosActivity" />
         <activity android:name=".InscreverAtividadeActivity" />
@@ -23,7 +23,6 @@
         <activity android:name=".DefinicoesActivity" />
         <activity android:name=".CriarPerfilActivity" />
         <activity android:name=".AvalicaoAtividadesActivity" />
-        <activity android:name=".PaginaAtividadesActivity" />
         <activity android:name=".AccountsActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity">

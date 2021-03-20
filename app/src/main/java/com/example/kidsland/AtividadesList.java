@@ -1,34 +1,54 @@
 package com.example.kidsland;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.util.Log;
-
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AtividadesList extends AppCompatActivity {
 
     //Instance Variables
     private static final String TAG = "AtividadesList";
-    ArrayList<String> titles;
+    private static final String URL_DATA = "http://10.0.2.2:8080/Back-end/ActivitiesRGet";
+    ArrayList<ListItem> listItems;
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
-    private RequestQueue mQueue;
+
+
+    /*  private RequestQueue mQueue;
+    private TextView textLocation;
+    private TextView textTitle;*/
 
 
     //Constructors
@@ -37,65 +57,78 @@ public class AtividadesList extends AppCompatActivity {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividades_list);
-        titles = new ArrayList<>();
+
+
+
+
+        listItems = new ArrayList<>();
 
         //Create Recycler View
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        //Get Request of the Activities
 
-        mQueue = Volley.newRequestQueue(this);
-
-        String url= "http://10.0.2.2:8080/Back-end/RewardsGet";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("MSG");
-
-                            for(int i=0; i < jsonArray.length(); i++){
-                                JSONObject activity = jsonArray.getJSONObject(i);
+        //CREATE ADAPTER
+        mLayoutManager = new LinearLayoutManager(this);
 
 
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+        //HTTP GET
+        OkHttpClient client = new OkHttpClient();
+
+        String url = "http://10.0.2.2:8080/Back-end/ActivitiesRGet";
+
+        Request request = new Request.Builder().url(url).build();
+
+        client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+            if (response.isSuccessful()){
+               String body = response.body().string();
+
+                try {
+                    JSONObject root = new JSONObject(body);
+                    JSONArray msg = root.getJSONArray("MSG");
+                    //listItems.add(new ListItem("ola","ola"));
+                    for ( int i = 0; i < msg.length(); i++) {
+                        JSONObject jsonItem = msg.getJSONObject(i);
+
+                        listItems.add(new ListItem(jsonItem.getString("description"), jsonItem.getString("address")));
+
+
+
+
+                    }
+
+                    AtividadesList.this.runOnUiThread(() -> {
+                        mAdapter = new AtividadesListAdapter(listItems);
+                        mRecyclerView.setLayoutManager(mLayoutManager);
+                        mRecyclerView.setAdapter(mAdapter);
+                        System.out.println(listItems);
+                        for (int j=0; j < listItems.size(); j++){
+                            Log.d(TAG, "onCreate: "+ listItems.get(j));
+                        }
+
+                    });
+
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Gson gson = new Gson();
+
 
             }
+            }
         });
-/*
-        titles.add("ola");
-        titles.add("miguel");
-        titles.add("lol");
-        titles.add("ola");
-        titles.add("miguel");
-        titles.add("lol");
-        titles.add("ola");
-        titles.add("miguel");
-        titles.add("lol");
-        titles.add("ola");
-        titles.add("miguel");
-        titles.add("lol");
-        titles.add("ola");
-        titles.add("miguel");
-        titles.add("lol");*/
 
 
 
-        for (int i=0; i < titles.size(); i++){
-            Log.d(TAG, "onCreate: "+ titles.get(i));
-        }
-
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new AtividadesListAdapter(titles);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
 
     }
 }

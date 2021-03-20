@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#F8FBFF"
     app:cardBackgroundColor="#F8FBFF"
-    tools:context=".AtividadesList">
+    tools:context=".AtividadesList"
+    >
 
 
     <Button
@@ -109,19 +110,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="@font/rubik"
                 android:textColor="#143656"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textDescription"
+                android:id="@+id/textLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView8"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
                 android:textColor="#143656"
                 android:textSize="14dp" />
 
