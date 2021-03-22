@@ -2,11 +2,13 @@ package com.example.kidsland;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -41,10 +43,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         EditText email, password;
         Button submitbutton;
+        TextView loginRedirect;
         String e, p;
         RequestParams params;
         AsyncHttpClient client;
-        String URL ="http://10.0.2.2:8080/Back-end/Register";
+        String URL ="http://188.82.156.135:8080/Back-end/Register";
 
 
         @Override
@@ -55,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
             email = (EditText)findViewById(R.id.emailTxt);
             password = (EditText) findViewById(R.id.passwordTxt);
             submitbutton = (Button) findViewById(R.id.submitbutton);
+            loginRedirect = (TextView) findViewById(R.id.loginRedirect);
 
             submitbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -84,6 +88,17 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 }
+            });
+
+            loginRedirect.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent( RegisterActivity.this, com.example.kidsland.LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+
             });
 
         }

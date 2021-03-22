@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8FBFF"
-    tools:context=".FactosActivity">
+    app:cardBackgroundColor="#F8FBFF"
+    tools:context=".AtividadesList"
+    >
+
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/ic_back"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@id/toolbar6"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="@id/toolbar6"
+        app:layout_constraintTop_toTopOf="@id/toolbar6" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar6"
@@ -21,74 +39,108 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/defitionsButton456"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:background="@drawable/ic_back"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar6"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar6"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="@+id/toolbar6"
-        app:layout_constraintTop_toTopOf="@+id/toolbar6" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Factos"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar6"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar6"
-        app:layout_constraintStart_toStartOf="@+id/toolbar6"
-        app:layout_constraintTop_toTopOf="@+id/toolbar6" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_marginStart="348dp"
+        android:layout_marginLeft="348dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/ic_baseline_settings_24"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar6"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar6"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar9"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar9"
         app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintStart_toStartOf="@+id/toolbar6"
-        app:layout_constraintTop_toTopOf="@+id/toolbar6" />
+        app:layout_constraintStart_toStartOf="@+id/toolbar9"
+        app:layout_constraintTop_toTopOf="@+id/toolbar9" />
 
     <TextView
-        android:id="@+id/editTextTextPersonName31"
-        android:layout_width="260dp"
+        android:id="@+id/titulofactos"
+        android:layout_width="251dp"
         android:layout_height="31dp"
-        android:background="@null"
-        android:ems="10"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginBottom="583dp"
         android:fontFamily="@font/rubik_light"
-        android:inputType="textPersonName"
-        android:text="SOBRE A TUA CIDADE"
+        android:lineSpacingExtra="30.81sp"
+        android:text="Sobre a tua Cidade"
         android:textColor="#143656"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126"
+        android:id="@+id/imageView56"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="100dp"
         app:srcCompat="@drawable/ic_buildings"
         tools:ignore="VectorDrawableCompat" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/containerActivity232"
+        android:layout_width="match_parent"
+        android:layout_height="611dp"
+        android:layout_marginTop="200dp"
+        android:background="#F8FBFF"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/container254"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F8FBFF">
+
+            <ImageView
+                android:id="@+id/imageView832"
+                android:layout_width="386dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="7dp"
+                android:padding="10dp"
+                app:srcCompat="@drawable/rectangle22" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="293dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/rubik"
+                android:paddingTop="10dp"
+                android:textColor="#143656"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView8"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:textColor="#143656"
+                android:textSize="14dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_viewFacts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

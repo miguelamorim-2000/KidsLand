@@ -279,7 +279,7 @@
         app:layout_constraintGuide_begin="20dp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/loginRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"

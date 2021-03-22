@@ -4,10 +4,12 @@ public class ListItem {
 
     private String tittle;
     private String location;
+    private String photo;
 
-    public ListItem(String tittle, String location) {
+    public ListItem(String tittle, String location, String photo) {
         this.tittle = tittle;
         this.location = location;
+        this.photo = photo;
     }
 
     public String getTittle() {
@@ -24,5 +26,13 @@ public class ListItem {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

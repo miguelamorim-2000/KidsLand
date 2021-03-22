@@ -6,44 +6,46 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/containerActivity"
+        android:id="@+id/containerActivity2321"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/container2"
+            android:id="@+id/container434"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imageView343"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/rectangleactivity" />
+                android:layout_marginBottom="50dp"
+                app:srcCompat="@drawable/rectangle22" />
 
             <TextView
-                android:id="@+id/textTitle"
-                android:layout_width="293dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="20dp"
+                android:id="@+id/textTitleFacts"
+                android:layout_width="206dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="50dp"
                 android:fontFamily="@font/rubik"
                 android:textColor="#143656"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textLocation"
-                android:layout_width="match_parent"
+                android:id="@+id/textDescriptionFact"
+                android:layout_width="288dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="130dp"
                 android:textColor="#143656"
                 android:textSize="14dp" />
 
@@ -52,12 +54,12 @@
                 android:layout_height="match_parent" />
 
             <ImageView
-                android:id="@+id/activityLogo"
-                android:layout_width="41dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="35dp" />
+                android:id="@+id/factImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="25dp" />
         </RelativeLayout>
 
 

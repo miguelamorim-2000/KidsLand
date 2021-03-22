@@ -113,6 +113,7 @@
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/rubik"
+                android:paddingTop="10dp"
                 android:textColor="#143656"
                 android:textSize="20dp"
                 android:textStyle="bold" />

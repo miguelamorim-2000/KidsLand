@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,11 +43,12 @@ public class AtividadesList extends AppCompatActivity {
 
     //Instance Variables
     private static final String TAG = "AtividadesList";
-    private static final String URL_DATA = "http://188.82.156.135:8080/Back-end/ActivitiesRGet";
     ArrayList<ListItem> listItems;
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
+    private Button backbutton;
+
 
 
 
@@ -56,23 +59,20 @@ public class AtividadesList extends AppCompatActivity {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividades_list);
+        backbutton = findViewById(R.id.button9);
 
+
+
+        //FETCH ACTIVITIES FROM DATABASE
 
         listItems = new ArrayList<>();
-        listItems.add(new ListItem("ola","ola"));
         //Create Recycler View
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
 
-        //Create Recycler View
-        mAdapter = new AtividadesListAdapter(listItems);
-
-
+        mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
 
-        //CREATE ADAPTER
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
 
 
 
@@ -97,11 +97,11 @@ public class AtividadesList extends AppCompatActivity {
                 try {
                     JSONObject root = new JSONObject(body);
                     JSONArray msg = root.getJSONArray("MSG");
-                    //listItems.add(new ListItem("ola","ola"));
                     for ( int i = 0; i < msg.length(); i++) {
                         JSONObject jsonItem = msg.getJSONObject(i);
 
-                        listItems.add(new ListItem(jsonItem.getString("description"), jsonItem.getString("address")));
+                        listItems.add(new ListItem(jsonItem.getString("description"), jsonItem.getString("address" ) + " , " + jsonItem.getString("county" ) +
+                                " , " +jsonItem.getString("district" ), jsonItem.getString("photo")));
 
 
 
@@ -109,6 +109,14 @@ public class AtividadesList extends AppCompatActivity {
                     }
 
                     AtividadesList.this.runOnUiThread(() -> {
+
+
+                        //Create Recycler View
+                        mAdapter = new AtividadesListAdapter(listItems);
+                        mRecyclerView.setLayoutManager(mLayoutManager);
+
+                        //CREATE ADAPTER
+                        mRecyclerView.setAdapter(mAdapter);
 
 
                         System.out.println(listItems);
@@ -128,6 +136,20 @@ public class AtividadesList extends AppCompatActivity {
 
             }
             }
+        });
+
+
+        //ON CLICK ICONS
+
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( AtividadesList.this, com.example.kidsland.MenuActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+
         });
 
 

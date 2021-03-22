@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         btnPrizes = (Button)findViewById(R.id.prizesButton);
         btnActivities = (Button)findViewById(R.id.gameButton);
         btnDefinitions = (Button)findViewById(R.id.defitionsButton);
+        btnFacts = (Button)findViewById(R.id.factsButton);
 
         btnPrizes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,17 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.DefinicoesActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+
+        });
+
+        btnFacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.FactosActivity.class);
                 startActivity(intent);
                 finish();
 
