@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     String e, p;
     RequestParams params;
     AsyncHttpClient client;
-    String URL ="http://10.0.2.2:8080/Back-end/Login";
+    String URL ="http://188.82.156.135:8080/Back-end/Login";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();

@@ -101,7 +101,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
                 android:layout_marginLeft="7dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="7dp"
+                android:padding="5dp"
                 app:srcCompat="@drawable/rectangleactivity" />
 
             <TextView
@@ -128,11 +129,22 @@
                 android:textColor="#143656"
                 android:textSize="14dp" />
 
+            <ImageView
+                android:id="@+id/activityLogo"
+                android:layout_width="41dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="35dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 />
+
+
 
 
         </RelativeLayout>

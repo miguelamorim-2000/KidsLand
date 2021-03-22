@@ -1,6 +1,8 @@
 package com.example.kidsland;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -39,16 +41,13 @@ public class AtividadesList extends AppCompatActivity {
 
     //Instance Variables
     private static final String TAG = "AtividadesList";
-    private static final String URL_DATA = "http://10.0.2.2:8080/Back-end/ActivitiesRGet";
+    private static final String URL_DATA = "http://188.82.156.135:8080/Back-end/ActivitiesRGet";
     ArrayList<ListItem> listItems;
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
 
 
-    /*  private RequestQueue mQueue;
-    private TextView textLocation;
-    private TextView textTitle;*/
 
 
     //Constructors
@@ -59,22 +58,28 @@ public class AtividadesList extends AppCompatActivity {
         setContentView(R.layout.activity_atividades_list);
 
 
-
-
         listItems = new ArrayList<>();
-
+        listItems.add(new ListItem("ola","ola"));
         //Create Recycler View
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
 
-        //CREATE ADAPTER
+        //Create Recycler View
+        mAdapter = new AtividadesListAdapter(listItems);
+
+
         mLayoutManager = new LinearLayoutManager(this);
+
+        //CREATE ADAPTER
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+
 
 
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://10.0.2.2:8080/Back-end/ActivitiesRGet";
+        String url = "http://188.82.156.135:8080/Back-end/ActivitiesRGet";
 
         Request request = new Request.Builder().url(url).build();
 
@@ -104,16 +109,14 @@ public class AtividadesList extends AppCompatActivity {
                     }
 
                     AtividadesList.this.runOnUiThread(() -> {
-                        mAdapter = new AtividadesListAdapter(listItems);
-                        mRecyclerView.setLayoutManager(mLayoutManager);
-                        mRecyclerView.setAdapter(mAdapter);
+
+
                         System.out.println(listItems);
                         for (int j=0; j < listItems.size(); j++){
                             Log.d(TAG, "onCreate: "+ listItems.get(j));
                         }
 
                     });
-
 
 
 
