@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/button13"
         android:layout_width="32dp"
@@ -32,8 +33,8 @@
         app:layout_constraintStart_toStartOf="@+id/toolbar5"
         app:layout_constraintTop_toTopOf="@+id/toolbar5" />
 
-    <Button
-        android:id="@+id/editTextTextEmailAddress"
+    <TextView
+        android:id="@+id/locationBtn"
         android:layout_width="357dp"
         android:layout_height="46dp"
         android:layout_marginStart="18dp"
@@ -50,14 +51,14 @@
         android:text="@string/localiza_o"
         android:textColor="#000000"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintBottom_toTopOf="@+id/storageBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:ignore="RtlHardcoded,TextViewEdits" />
 
-    <Button
-        android:id="@+id/editTextTextEmailAddress2"
+    <TextView
+        android:id="@+id/storageBtn"
         android:layout_width="357dp"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
@@ -72,10 +73,10 @@
         android:text="@string/armazenamento"
         android:textColor="#000000"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress4"
+        app:layout_constraintBottom_toTopOf="@+id/camaraAccess"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/locationBtn"
         tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <Button
@@ -100,11 +101,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4"
+        app:layout_constraintTop_toBottomOf="@+id/camaraAccess"
         tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <Button
-        android:id="@+id/editTextTextEmailAddress4"
+        android:id="@+id/camaraAccess"
         android:layout_width="357dp"
         android:layout_height="46dp"
         android:layout_marginStart="18dp"
@@ -123,8 +124,9 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintTop_toBottomOf="@+id/storageBtn"
         tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <TextView
@@ -165,60 +167,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/ic_subtract"
-        android:contentDescription="@string/todo1"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="351dp"
-        android:layout_marginLeft="351dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="1dp"
         android:background="@drawable/ic_subtract"
         android:contentDescription="@string/todo1"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintBottom_toBottomOf="@+id/storageBtn"
+        app:layout_constraintEnd_toEndOf="@+id/storageBtn"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="@+id/storageBtn"
+        app:layout_constraintTop_toTopOf="@+id/storageBtn" />
 
     <ImageView
         android:id="@+id/imageView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="351dp"
-        android:layout_marginLeft="351dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="1dp"
         android:background="@drawable/ic_subtract"
         android:contentDescription="@string/todo1"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextEmailAddress4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress4"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/camaraAccess"
+        app:layout_constraintEnd_toEndOf="@+id/camaraAccess"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="@+id/camaraAccess"
+        app:layout_constraintTop_toTopOf="@+id/camaraAccess" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_subtract"
+        android:contentDescription="@string/todo1"
+        android:tint="#009688"
+        app:layout_constraintBottom_toBottomOf="@+id/locationBtn"
+        app:layout_constraintEnd_toEndOf="@+id/locationBtn"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="@+id/locationBtn"
+        app:layout_constraintTop_toTopOf="@+id/locationBtn"
+        app:layout_constraintVertical_bias="0.482" />
 </androidx.constraintlayout.widget.ConstraintLayout>

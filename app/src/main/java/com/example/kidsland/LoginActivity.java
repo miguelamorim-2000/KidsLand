@@ -15,6 +15,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
@@ -52,10 +53,27 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         super.onSuccess(statusCode, headers, response);
                         System.out.println(response);
+
+                        String status = "";
+                        try {
+                            status = response.getString("STATUS");
+                        } catch (JSONException jsonException) {
+                            jsonException.printStackTrace();
+                        }
+                        if (status.equals("200")){
                         Toast.makeText(LoginActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent( LoginActivity.this, com.example.kidsland.MenuActivity.class);
                         startActivity(intent);
-                        finish();
+                        finish(); }
+
+
+                        if (status.equals("400")){
+                                Toast.makeText(LoginActivity.this, "Erro no Login", Toast.LENGTH_SHORT).show();
+                                email.setText("");
+                                password.setText("");
+
+
+                        }
 
                     }
 
