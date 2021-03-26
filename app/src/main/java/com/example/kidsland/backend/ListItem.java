@@ -1,4 +1,4 @@
-package com.example.kidsland;
+package com.example.kidsland.backend;
 
 public class ListItem {
 

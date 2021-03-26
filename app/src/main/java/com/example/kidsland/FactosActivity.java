@@ -1,15 +1,16 @@
 package com.example.kidsland;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.kidsland.backend.Fact;
 import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +60,7 @@ public class FactosActivity extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/FactsGet";
+        String url = "http://188.82.156.135:8080/Back-end/FactGet";
 
         Request request = new Request.Builder().url(url).build();
 
