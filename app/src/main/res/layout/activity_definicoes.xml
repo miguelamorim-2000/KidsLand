@@ -48,6 +48,7 @@
         android:fontFamily="@font/rubik_light"
         android:gravity="left|center_vertical"
         android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
         android:text="@string/localiza_o"
         android:textColor="#000000"
         app:backgroundTint="@null"
@@ -70,6 +71,7 @@
         android:fontFamily="@font/rubik_light"
         android:gravity="left|center_vertical"
         android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
         android:text="@string/armazenamento"
         android:textColor="#000000"
         app:backgroundTint="@null"
@@ -80,7 +82,7 @@
         tools:ignore="RtlHardcoded,TextViewEdits" />
 
     <Button
-        android:id="@+id/editTextTextEmailAddress7"
+        android:id="@+id/logoutBtn"
         android:layout_width="357dp"
         android:layout_height="46dp"
         android:layout_marginStart="20dp"
@@ -104,7 +106,7 @@
         app:layout_constraintTop_toBottomOf="@+id/camaraAccess"
         tools:ignore="RtlHardcoded,TextViewEdits" />
 
-    <Button
+    <TextView
         android:id="@+id/camaraAccess"
         android:layout_width="357dp"
         android:layout_height="46dp"
@@ -119,7 +121,8 @@
         android:fontFamily="@font/rubik_light"
         android:gravity="left|center_vertical"
         android:inputType="textEmailAddress"
-        android:text="@string/c_mara"
+        android:paddingLeft="15dp"
+        android:text="Câmara"
         android:textColor="#000000"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -198,7 +201,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_subtract"
         android:contentDescription="@string/todo1"
-        android:tint="#009688"
         app:layout_constraintBottom_toBottomOf="@+id/locationBtn"
         app:layout_constraintEnd_toEndOf="@+id/locationBtn"
         app:layout_constraintHorizontal_bias="0.961"

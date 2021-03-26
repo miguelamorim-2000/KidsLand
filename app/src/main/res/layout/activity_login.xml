@@ -72,23 +72,10 @@
         app:layout_constraintVertical_bias="0.07999998" />
 
     <EditText
-        android:id="@+id/passwordTxtLogin"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/textfieldround"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordtittle" />
-
-    <EditText
         android:id="@+id/emailTxtLogin"
         android:layout_width="350dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -98,6 +85,20 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailtittle" />
+
+    <EditText
+        android:id="@+id/passwordTxtLogin"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordtittle" />
 
     <TextView
         android:id="@+id/passwordtittle"
@@ -119,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="55dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/rubik_light"
         android:text="Email"
@@ -171,6 +172,36 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
+
+    <TextView
+        android:id="@+id/errorTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:layout_marginBottom="15dp"
+        android:text="Erro na Autenticação"
+        android:textColor="#900001"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/emailTxtLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailTxtLogin"
+        app:layout_constraintEnd_toStartOf="@+id/errorTxt"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:srcCompat="@drawable/ic_baseline_error_24"
+        android:visibility="invisible"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

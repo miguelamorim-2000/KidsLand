@@ -1,7 +1,5 @@
 package com.example.kidsland;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,15 +8,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.kidsland.backend.SessionManagement;
+import com.example.kidsland.backend.User;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
+
 
 public class LoginActivity extends AppCompatActivity {
     private Button botaoLogin;
@@ -39,6 +41,24 @@ public class LoginActivity extends AppCompatActivity {
         email = (EditText)findViewById(R.id.emailTxtLogin);
         password = (EditText) findViewById(R.id.passwordTxtLogin);
 
+        //SEE IF SESSION IS RUNNING ON START;
+       SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
+       int userID = sessionManagement.getSession();
+
+       if (userID != -1){
+
+           //IF USER NOT LOGGED IN
+           Intent intent = new Intent( LoginActivity.this, com.example.kidsland.MenuActivity.class);
+           startActivity(intent);
+           finish();
+       } else {
+           //DO NOTHING
+       }
+
+
+
+
+        // ATTEMPT LOGIN
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                         super.onSuccess(statusCode, headers, response);
                         System.out.println(response);
 
+
                         String status = "";
                         try {
                             status = response.getString("STATUS");
@@ -61,8 +82,15 @@ public class LoginActivity extends AppCompatActivity {
                             jsonException.printStackTrace();
                         }
                         if (status.equals("200")){
-                        Toast.makeText(LoginActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent( LoginActivity.this, com.example.kidsland.MenuActivity.class);
+                            //CREATE SESSION
+                            User user = new User("ola@gmail.com", "ola", "ola", 3);
+                            SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
+                            sessionManagement.saveSession(user);
+                            Toast.makeText(LoginActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT).show();
+
+
+                            //MOVE TO MENU PAGE
+                            Intent intent = new Intent( LoginActivity.this, com.example.kidsland.MenuActivity.class);
                         startActivity(intent);
                         finish(); }
 
@@ -71,6 +99,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Erro no Login", Toast.LENGTH_SHORT).show();
                                 email.setText("");
                                 password.setText("");
+                                findViewById(R.id.errorTxt).setVisibility(View.VISIBLE);
+                                findViewById(R.id.imageView6).setVisibility(View.VISIBLE);
 
 
                         }

@@ -1,11 +1,15 @@
 package com.example.kidsland;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.kidsland.backend.SessionManagement;
 
 public class MenuActivity extends AppCompatActivity {
     private Button btnPrizes;
@@ -27,6 +31,16 @@ public class MenuActivity extends AppCompatActivity {
         btnDefinitions = (Button)findViewById(R.id.defitionsButton);
         btnFacts = (Button)findViewById(R.id.factsButton);
 
+        System.out.println("ola1");
+        //GET USER DATA
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SessionManagement sessionManagement = new SessionManagement(this);
+        int id_user = sessionManagement.getSession();
+        System.out.println(id_user);
+        System.out.println("ola2");
+
+
+        //BUTTON LISTENERS TO REDIRECT TO PAGES
         btnPrizes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

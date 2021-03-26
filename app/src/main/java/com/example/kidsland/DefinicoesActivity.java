@@ -1,26 +1,28 @@
 package com.example.kidsland;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.example.kidsland.backend.SessionManagement;
+
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class DefinicoesActivity extends AppCompatActivity {
 
-    private Button camaraAccess;
+    private TextView camaraAccess;
     private TextView storageBtn;
     private TextView locationBtn;
+    private Button logoutBtn;
     private String manifestCam;
     private String[] manifestStorage ={Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -39,6 +41,7 @@ public class DefinicoesActivity extends AppCompatActivity {
        locationBtn = findViewById(R.id.locationBtn);
        storageBtn = findViewById(R.id.storageBtn);
        manifestCam = Manifest.permission.CAMERA;
+        logoutBtn = findViewById(R.id.logoutBtn);
 
 
 
@@ -93,6 +96,21 @@ public class DefinicoesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 verifyPermissionLocation();
+
+            }
+        });
+
+        //CLICK TO LOGOUT
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                SessionManagement sessionManagement = new SessionManagement(DefinicoesActivity.this);
+                sessionManagement.removeSession();
+                //MOVE TO LOGIN PAGE
+                Intent intent = new Intent( DefinicoesActivity.this, com.example.kidsland.LoginActivity.class);
+                startActivity(intent);
+                finish();
 
             }
         });
