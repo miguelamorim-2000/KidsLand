@@ -1,6 +1,5 @@
 package com.example.kidsland;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -67,7 +66,7 @@ public class AtividadesList extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/ActivitiesRGet";
+        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestGet";
 
         Request request = new Request.Builder().url(url).build();
 
@@ -85,10 +84,13 @@ public class AtividadesList extends AppCompatActivity {
                 try {
                     JSONObject root = new JSONObject(body);
                     JSONArray msg = root.getJSONArray("MSG");
-                    for ( int i = 0; i < msg.length(); i++) {
+                    for ( int i = 0; i < msg.length()-1; i++) {
                         JSONObject jsonItem = msg.getJSONObject(i);
 
-                        listItems.add(new ListItem(jsonItem.getString("description"), jsonItem.getString("address" ) + " , " + jsonItem.getString("county" ) +
+
+
+
+                        listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
                                 " , " +jsonItem.getString("district" ), jsonItem.getString("photo")));
 
 
@@ -132,8 +134,6 @@ public class AtividadesList extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AtividadesList.this, com.example.kidsland.MenuActivity.class);
-                startActivity(intent);
                 finish();
 
             }

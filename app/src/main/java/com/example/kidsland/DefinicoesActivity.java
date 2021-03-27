@@ -22,7 +22,7 @@ public class DefinicoesActivity extends AppCompatActivity {
     private TextView camaraAccess;
     private TextView storageBtn;
     private TextView locationBtn;
-    private Button logoutBtn;
+    private Button logoutBtn,backBtnDefinitions;
     private String manifestCam;
     private String[] manifestStorage ={Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -42,6 +42,7 @@ public class DefinicoesActivity extends AppCompatActivity {
        storageBtn = findViewById(R.id.storageBtn);
        manifestCam = Manifest.permission.CAMERA;
         logoutBtn = findViewById(R.id.logoutBtn);
+        backBtnDefinitions= findViewById(R.id.backBtnDefinitions);
 
 
 
@@ -110,6 +111,16 @@ public class DefinicoesActivity extends AppCompatActivity {
                 //MOVE TO LOGIN PAGE
                 Intent intent = new Intent( DefinicoesActivity.this, com.example.kidsland.LoginActivity.class);
                 startActivity(intent);
+                finish();
+
+            }
+        });
+
+        //BACK TO PREVIOUS PAGE
+        backBtnDefinitions.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
                 finish();
 
             }

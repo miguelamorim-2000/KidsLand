@@ -54,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.PremiosActivity.class);
                 startActivity(intent);
-                finish();
+
 
             }
 
@@ -65,7 +65,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.AtividadesList.class);
                 startActivity(intent);
-                finish();
+
 
             }
 
@@ -76,7 +76,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.DefinicoesActivity.class);
                 startActivity(intent);
-                finish();
+
 
             }
 
@@ -87,7 +87,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.FactosActivity.class);
                 startActivity(intent);
-                finish();
+
 
             }
 
@@ -98,7 +98,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.MapActivity.class);
                 startActivity(intent);
-                finish();
+
 
             }
 

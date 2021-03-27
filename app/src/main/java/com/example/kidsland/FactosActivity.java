@@ -1,6 +1,5 @@
 package com.example.kidsland;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -124,8 +123,6 @@ public class FactosActivity extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( FactosActivity.this, com.example.kidsland.MenuActivity.class);
-                startActivity(intent);
                 finish();
 
             }
