@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
-    android:background="#46D0D9">
+    android:background="#46D0D9"
+    tools:context=".RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -24,10 +24,10 @@
         android:text="Data de Nascimento"
         android:textColor="#13497B"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintBottom_toTopOf="@+id/birthDateTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate"
+        app:layout_constraintStart_toStartOf="@+id/birthDateTxt"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -167,8 +167,8 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintStart_toStartOf="@+id/birthDateTxt"
+        app:layout_constraintTop_toBottomOf="@+id/birthDateTxt" />
 
     <EditText
         android:id="@+id/passwordTxt"
@@ -182,12 +182,26 @@
         app:layout_constraintTop_toBottomOf="@+id/emailTxt" />
 
     <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
+        android:id="@+id/birthDateTxt"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
         android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName31"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName31"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName31"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <EditText
+        android:id="@+id/telephoneTxt"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName31"
         app:layout_constraintHorizontal_bias="1.0"
@@ -233,7 +247,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/emailTxt"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/birthDateTxt"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -308,10 +322,24 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confitmar Password"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:text="Telefone do Tutor"
+        android:textColor="#13497B"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/telephoneTxt"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmar Password"
         android:textColor="#13497B"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

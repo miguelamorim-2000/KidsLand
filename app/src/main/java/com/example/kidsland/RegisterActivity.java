@@ -1,73 +1,95 @@
 package com.example.kidsland;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.JsonReader;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Calendar;
 
 import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.HttpResponse;
-import cz.msebera.android.httpclient.client.HttpClient;
-import cz.msebera.android.httpclient.client.methods.HttpPost;
-import cz.msebera.android.httpclient.entity.StringEntity;
-import cz.msebera.android.httpclient.impl.client.HttpClientBuilder;
 
 
 public class RegisterActivity extends AppCompatActivity {
 
-        EditText email, password;
+        EditText email, password, telephone, birthdate;
         Button submitbutton;
         TextView loginRedirect;
-        String e, p;
+        String e, p, t,b;
         RequestParams params;
         AsyncHttpClient client;
         String URL ="http://188.82.156.135:8080/Back-end/Register";
-
-
+        private DatePickerDialog.OnDateSetListener mDateSetListener;
+        private static final String TAG ="RegisterActivity";
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             getSupportActionBar().hide();
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
-            email = (EditText)findViewById(R.id.emailTxt);
+            email = (EditText) findViewById(R.id.emailTxt);
             password = (EditText) findViewById(R.id.passwordTxt);
+            telephone = (EditText) findViewById(R.id.telephoneTxt);
             submitbutton = (Button) findViewById(R.id.submitbutton);
             loginRedirect = (TextView) findViewById(R.id.loginRedirect);
+            birthdate = (EditText) findViewById(R.id.birthDateTxt);
+
+            birthdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Calendar cal = Calendar.getInstance();
+                    int year = cal.get(Calendar.YEAR);
+                    int month = cal.get(Calendar.MONTH);
+                    int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                    DatePickerDialog dialog = new DatePickerDialog(
+                            RegisterActivity.this,
+                            android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                            mDateSetListener,
+                            year, month, day);
+
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.show();
+
+
+                }
+            });
+            mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    b= year + "-" + month + "-" + dayOfMonth;
+                    Log.d(TAG, "onDateSet: date: " + year + "-" + month + "-" + dayOfMonth);
+                    birthdate.setText(b);
+                }
+            };
+
 
             submitbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     e = email.getText().toString();
                     p = password.getText().toString();
+                    t = telephone.getText().toString();
                     params= new RequestParams();
                     params.put("email", e);
                     params.put("password", p);
+                    params.put("phone_number_tutor", t);
+                    params.put("birth_date", b);
                     client = new AsyncHttpClient();
                     client.post(URL, params, new JsonHttpResponseHandler(){
                         @Override
