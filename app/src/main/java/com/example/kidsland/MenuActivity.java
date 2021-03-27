@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +18,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button btnActivities;
     private Button btnHistoric;
     private Button btnSuggestions;
-    private Button btnDefinitions;
+    private Button btnDefinitions, mapButton;
 
 
     @Override
@@ -30,14 +31,21 @@ public class MenuActivity extends AppCompatActivity {
         btnActivities = (Button)findViewById(R.id.gameButton);
         btnDefinitions = (Button)findViewById(R.id.defitionsButton);
         btnFacts = (Button)findViewById(R.id.factsButton);
+        mapButton = (Button)findViewById(R.id.mapButton);
 
-        System.out.println("ola1");
+
+
+
         //GET USER DATA
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         SessionManagement sessionManagement = new SessionManagement(this);
         int id_user = sessionManagement.getSession();
-        System.out.println(id_user);
-        System.out.println("ola2");
+        String name_child = sessionManagement.getNAME_CHILD();
+
+
+        //SET FIELDS WITH DATA
+        TextView txt1 = (TextView)findViewById(R.id.nameTxt);
+        txt1.setText(name_child);
 
 
         //BUTTON LISTENERS TO REDIRECT TO PAGES
@@ -78,6 +86,17 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.FactosActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+
+        });
+
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.MapActivity.class);
                 startActivity(intent);
                 finish();
 

@@ -4,12 +4,8 @@ public class User {
     String email,password,salt,login_type,status;
     int id_user;
 
-    public User(String email, String login_type, String status, int id_user) {
+    public User(String email, int id_user) {
         this.email = email;
-        this.password = "";
-        this.salt = "";
-        this.login_type = login_type;
-        this.status = status;
         this.id_user = id_user;
     }
 

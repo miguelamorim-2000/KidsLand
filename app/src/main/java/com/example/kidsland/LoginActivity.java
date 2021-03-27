@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.kidsland.backend.Child;
 import com.example.kidsland.backend.SessionManagement;
 import com.example.kidsland.backend.User;
 import com.loopj.android.http.AsyncHttpClient;
@@ -74,18 +75,37 @@ public class LoginActivity extends AppCompatActivity {
                         super.onSuccess(statusCode, headers, response);
                         System.out.println(response);
 
+                        //INICIALIZE VARIABLES
+                        String status = "", email_user = "", birth_date ="", name_child="";
+                        int id_user = 0, id_child = 0, total_points=0;
 
-                        String status = "";
+                        //GET STATUS OF OPERATION
                         try {
                             status = response.getString("STATUS");
                         } catch (JSONException jsonException) {
                             jsonException.printStackTrace();
                         }
                         if (status.equals("200")){
+
+                            //STORE USER DATA
+                            try {
+                                email_user = response.getString("email");
+                                id_user =response.getInt("id_user");
+                                id_child =response.getInt("id_child");
+                                total_points =response.getInt("total_points");
+                                birth_date =response.getString("birth_date");
+                                name_child =response.getString("name");
+
+
+                            } catch (JSONException jsonException) {
+                                jsonException.printStackTrace();
+                            }
+
                             //CREATE SESSION
-                            User user = new User("ola@gmail.com", "ola", "ola", 3);
+                            User user = new User(email_user, id_user);
+                            Child child = new Child(name_child, total_points, birth_date, id_child);
                             SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
-                            sessionManagement.saveSession(user);
+                            sessionManagement.saveSession(user, child);
                             Toast.makeText(LoginActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT).show();
 
 
