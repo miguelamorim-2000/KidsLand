@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     android:background="#F8FBFF"
     app:cardBackgroundColor="#F8FBFF"
-    tools:context=".AtividadesList"
-    >
-
+    tools:context=".HistoryActivity">
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/backBtnHistory"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="10dp"
@@ -20,13 +18,13 @@
         android:background="@drawable/ic_back"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@id/toolbar9"
+        app:layout_constraintEnd_toEndOf="@id/toolbar11"
         app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="@id/toolbar9"
-        app:layout_constraintTop_toTopOf="@id/toolbar9" />
+        app:layout_constraintStart_toStartOf="@id/toolbar11"
+        app:layout_constraintTop_toTopOf="@id/toolbar11" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar9"
+        android:id="@+id/toolbar11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="37dp"
@@ -39,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/defitionsButton2"
+        android:id="@+id/defitionsButton4"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="348dp"
@@ -49,23 +47,38 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/ic_baseline_settings_24"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar11"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        app:layout_constraintStart_toStartOf="@+id/toolbar11"
+        app:layout_constraintTop_toTopOf="@+id/toolbar11" />
 
     <TextView
-        android:id="@+id/textView20"
-        android:layout_width="251dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="117dp"
+        android:id="@+id/textView155"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="583dp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
-        android:text="@string/string_atividades_para_ti"
+        android:text="HISTÓRICO DE "
+        android:textColor="#143656"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="583dp"
+        android:fontFamily="@font/rubik_light"
+        android:lineSpacingExtra="30.81sp"
+        android:text="ATIVIDADES"
         android:textColor="#143656"
         android:textSize="26sp"
         android:textStyle="bold" />
@@ -74,10 +87,10 @@
         android:id="@+id/imageView7"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/ic_game"
+        app:srcCompat="@drawable/ic_puzzle_game"
         tools:ignore="VectorDrawableCompat" />
     -->
 
@@ -107,7 +120,7 @@
 
             <TextView
                 android:id="@+id/textTitle434"
-                android:layout_width="293dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
@@ -120,7 +133,7 @@
 
             <TextView
                 android:id="@+id/textLocation34"
-                android:layout_width="match_parent"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageView8"
                 android:layout_marginStart="80dp"
@@ -143,8 +156,8 @@
                 android:id="@+id/recycler_view4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp" />
 
 
 
@@ -153,6 +166,5 @@
 
 
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>

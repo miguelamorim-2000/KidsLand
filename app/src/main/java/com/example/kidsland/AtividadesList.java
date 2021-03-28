@@ -54,7 +54,7 @@ public class AtividadesList extends AppCompatActivity {
 
         listItems = new ArrayList<>();
         //Create Recycler View
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view4);
 
 
         mRecyclerView.setHasFixedSize(true);
@@ -84,7 +84,7 @@ public class AtividadesList extends AppCompatActivity {
                 try {
                     JSONObject root = new JSONObject(body);
                     JSONArray msg = root.getJSONArray("MSG");
-                    for ( int i = 0; i < msg.length()-1; i++) {
+                    for ( int i = 0; i < msg.length(); i++) {
                         JSONObject jsonItem = msg.getJSONObject(i);
 
 

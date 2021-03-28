@@ -18,9 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsLand"
         android:usesCleartextTraffic="true">
-        <meta-data android:name="com.google.android.geo.API_KEY"
+        <activity android:name=".HistoryActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".MapActivity"></activity>
+
+        <activity android:name=".MapActivity" />
         <activity android:name=".SugestionActivity" />
         <activity android:name=".AtividadesList" />
         <activity android:name=".RegisterActivity" />
@@ -32,7 +36,6 @@
         <activity android:name=".DefinicoesActivity" />
         <activity android:name=".CriarPerfilActivity" />
         <activity android:name=".AvalicaoAtividadesActivity" />
-        <activity android:name=".AccountsActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

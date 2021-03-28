@@ -18,7 +18,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button btnActivities;
     private Button btnHistoric;
     private Button btnSuggestions;
-    private Button btnDefinitions, mapButton;
+    private Button btnDefinitions, mapButton,historyBtn;
 
 
     @Override
@@ -32,6 +32,7 @@ public class MenuActivity extends AppCompatActivity {
         btnDefinitions = (Button)findViewById(R.id.defitionsButton);
         btnFacts = (Button)findViewById(R.id.factsButton);
         mapButton = (Button)findViewById(R.id.mapButton);
+        historyBtn = (Button) findViewById(R.id.historyBtn);
 
 
 
@@ -97,6 +98,17 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.MapActivity.class);
+                startActivity(intent);
+
+
+            }
+
+        });
+
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.HistoryActivity.class);
                 startActivity(intent);
 
 

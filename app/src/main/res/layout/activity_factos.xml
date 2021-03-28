@@ -57,15 +57,15 @@
 
     <TextView
         android:id="@+id/titulofactos"
-        android:layout_width="251dp"
-        android:layout_height="31dp"
+        android:layout_width="304dp"
+        android:layout_height="43dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="117dp"
         android:layout_marginBottom="583dp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
-        android:text="Sobre a tua Cidade"
+        android:text="SOBRE A TUA CIDADE"
         android:textColor="#143656"
         android:textSize="26sp"
         android:textStyle="bold" />
@@ -74,8 +74,8 @@
         android:id="@+id/imageView56"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="100dp"
         app:srcCompat="@drawable/ic_buildings"
         tools:ignore="VectorDrawableCompat" />
@@ -106,7 +106,7 @@
                 app:srcCompat="@drawable/rectangle22" />
 
             <TextView
-                android:id="@+id/textTitle"
+                android:id="@+id/textTitle434"
                 android:layout_width="293dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -119,7 +119,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textLocation"
+                android:id="@+id/textLocation34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageView8"
@@ -134,8 +134,8 @@
                 android:id="@+id/recycler_viewFacts"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp" />
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp" />
 
 
         </RelativeLayout>

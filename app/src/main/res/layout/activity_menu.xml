@@ -8,7 +8,7 @@
     tools:context=".MenuActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/historyBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
 
@@ -85,7 +85,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/historyBtn"
         app:layout_constraintTop_toBottomOf="@+id/prizesButton"
         app:layout_constraintVertical_bias="0.51" />
 
