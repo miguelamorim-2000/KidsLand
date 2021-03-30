@@ -168,7 +168,7 @@ public class DefinicoesActivity extends AppCompatActivity {
     private void verifyPermissionLocation (){
         Log.d(TAG, "verifyPermissions: asking user for permissions");
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION};
+                /*Manifest.permission.ACCESS_COARSE_LOCATION*/};
 
         if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 permissions[0]) == PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this.getApplicationContext(),

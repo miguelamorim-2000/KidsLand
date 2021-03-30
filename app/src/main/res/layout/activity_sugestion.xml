@@ -6,6 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".SugestionActivity">
 
+    <EditText
+        android:id="@+id/subjectTxt"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailtittle4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailtittle3" />
+
+    <Button
+        android:id="@+id/sendSugestionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttonlogin"
+        android:text="Enviar "
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="205dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        android:layout_marginBottom="49dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Diz-nos o que achas!"
+        android:textColor="#143656"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/subjectTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+    c
+
+    <EditText
+        android:id="@+id/descriptionSugestion"
+        android:layout_width="350dp"
+        android:layout_height="294dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/textfieldround"
+        android:ems="10"
+        android:inputType="textLongMessage"
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/sendSugestionBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailtittle4" />
+
+    <TextView
+        android:id="@+id/emailtittle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="189dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginRight="331dp"
+        android:fontFamily="@font/rubik_light"
+        android:text="Sobre:"
+        android:textColor="#13497B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/subjectTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <TextView
+        android:id="@+id/emailtittle4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="287dp"
+        android:layout_marginRight="287dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rubik_light"
+        android:text="Escreve aqui:"
+        android:textColor="#13497B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionSugestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjectTxt" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
