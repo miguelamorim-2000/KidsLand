@@ -40,7 +40,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionSugestion" />
 
     <TextView
         android:id="@+id/editTextTextPersonName3"
@@ -48,7 +49,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="94dp"
         android:layout_marginLeft="94dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="94dp"
         android:layout_marginRight="94dp"
         android:layout_marginBottom="49dp"
@@ -72,14 +73,15 @@
         android:layout_height="294dp"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/textfieldround"
         android:ems="10"
-        android:inputType="textLongMessage"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
         android:paddingLeft="5dp"
+        android:paddingTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/sendSugestionBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="189dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="331dp"
         android:layout_marginRight="331dp"
         android:fontFamily="@font/rubik_light"
@@ -102,7 +104,7 @@
         app:layout_constraintBottom_toTopOf="@+id/subjectTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
     <TextView
         android:id="@+id/emailtittle4"
@@ -110,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="287dp"
         android:layout_marginRight="287dp"
         android:layout_marginBottom="10dp"
@@ -191,6 +193,8 @@
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
         android:layout_marginTop="32dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
         app:srcCompat="@drawable/ic_info" />

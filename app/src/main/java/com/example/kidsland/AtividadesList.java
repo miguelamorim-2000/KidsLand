@@ -66,7 +66,7 @@ public class AtividadesList extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestGet";
+        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestFutureGet";
 
         Request request = new Request.Builder().url(url).build();
 

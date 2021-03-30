@@ -1,16 +1,17 @@
 package com.example.kidsland;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.kidsland.backend.Child;
 import com.example.kidsland.backend.SessionManagement;
-import com.example.kidsland.backend.User;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -22,10 +23,13 @@ import cz.msebera.android.httpclient.Header;
 
 public class SugestionActivity extends AppCompatActivity {
     Button backBtnSugestions, settingBtnSugestions, submitSugestion;
-    String e, p;
+    EditText subjectTxt, descriptionSugestion;
+    String t, d;
+    int id_child, id_user;
+    String name_child;
     RequestParams params;
     AsyncHttpClient client;
-    String URL ="http://188.82.156.135:8080/Back-end/Login";
+    String URL ="http://188.82.156.135:8080/Back-end/SugestionPost";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +37,18 @@ public class SugestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sugestion);
 
+        //GET USER ID
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SessionManagement sessionManagement = new SessionManagement(this);
+        id_user = sessionManagement.getSession();
+        id_child = sessionManagement.getID_CHILD();
+        name_child = sessionManagement.getNAME_CHILD();
+
         backBtnSugestions = findViewById(R.id.backBtnSugestions);
         settingBtnSugestions =findViewById(R.id.settingBtnSugestions);
         submitSugestion = findViewById(R.id.sendSugestionBtn);
+        subjectTxt = findViewById(R.id.subjectTxt);
+        descriptionSugestion = findViewById(R.id.descriptionSugestion);
 
 
         //MOVE TO LOGIN PAGE
@@ -61,13 +74,18 @@ public class SugestionActivity extends AppCompatActivity {
 
         // ATTEMPT SEND SUGESTION
         submitSugestion.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                e = email.getText().toString();
-                p = password.getText().toString();
+
+
+                //POST
+                t = subjectTxt.getText().toString();
+                d = descriptionSugestion.getText().toString();
                 params= new RequestParams();
-                params.put("email", e);
-                params.put("password", p);
+                params.put("title", t);
+                params.put("designation", d);
+                params.put("id_child", id_child);
                 client = new AsyncHttpClient();
                 client.post(URL, params, new JsonHttpResponseHandler(){
                     @Override
@@ -76,8 +94,7 @@ public class SugestionActivity extends AppCompatActivity {
                         System.out.println(response);
 
                         //INICIALIZE VARIABLES
-                        String status = "", email_user = "", birth_date ="", name_child="";
-                        int id_user = 0, id_child = 0, total_points=0;
+                        String status = "";
 
                         //GET STATUS OF OPERATION
                         try {
@@ -86,41 +103,15 @@ public class SugestionActivity extends AppCompatActivity {
                             jsonException.printStackTrace();
                         }
                         if (status.equals("200")){
-
-                            //STORE USER DATA
-                            try {
-                                email_user = response.getString("email");
-                                id_user =response.getInt("id_user");
-                                id_child =response.getInt("id_child");
-                                total_points =response.getInt("total_points");
-                                birth_date =response.getString("birth_date");
-                                name_child =response.getString("name");
+                            Toast.makeText(SugestionActivity.this, "Sugestão enviada com sucesso!", Toast.LENGTH_SHORT).show();
 
 
-                            } catch (JSONException jsonException) {
-                                jsonException.printStackTrace();
-                            }
-
-                            //CREATE SESSION
-                            User user = new User(email_user, id_user);
-                            Child child = new Child(name_child, total_points, birth_date, id_child);
-                            SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
-                            sessionManagement.saveSession(user, child);
-                            Toast.makeText(LoginActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT).show();
-
-
-                            //MOVE TO MENU PAGE
-                            Intent intent = new Intent( LoginActivity.this, com.example.kidsland.MenuActivity.class);
-                            startActivity(intent);
-                            finish(); }
+}
 
 
                         if (status.equals("400")){
-                            Toast.makeText(LoginActivity.this, "Erro no Login", Toast.LENGTH_SHORT).show();
-                            email.setText("");
-                            password.setText("");
-                            findViewById(R.id.errorTxt).setVisibility(View.VISIBLE);
-                            findViewById(R.id.imageView6).setVisibility(View.VISIBLE);
+                            Toast.makeText(SugestionActivity.this, "Erro no envio da sugestão. Tente Novamente.", Toast.LENGTH_SHORT).show();
+
 
 
                         }
@@ -130,7 +121,7 @@ public class SugestionActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                         super.onFailure(statusCode, headers, throwable, errorResponse);
-                        Toast.makeText(LoginActivity.this, "Falha no Login!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SugestionActivity.this, "Falha de conexão.", Toast.LENGTH_SHORT).show();
                         System.out.println(errorResponse);
                     }
 
