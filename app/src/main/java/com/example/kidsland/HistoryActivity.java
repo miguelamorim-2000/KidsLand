@@ -70,7 +70,7 @@ public class HistoryActivity extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestByIdGet?id_child="+id_child;
+        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestByIdChildGet?id_child="+id_child;
 
         Request request = new Request.Builder().url(url).build();
         client.newCall(request).enqueue(new Callback() {
@@ -90,7 +90,9 @@ public class HistoryActivity extends AppCompatActivity {
 
 
                         JSONObject root = new JSONObject(body);
+                        System.out.println(root);
                         JSONArray msg = root.getJSONArray("MSG");
+                        System.out.println(msg);
 
 
                         for (int i = 0; i < msg.length(); i++) {

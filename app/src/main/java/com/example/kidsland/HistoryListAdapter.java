@@ -88,7 +88,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
             description = itemView.findViewById(R.id.textLocation34);
             activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo);
             recyclerView = itemView.findViewById(R.id.recycler_view4);
-            pointsTxt = itemView.findViewById(R.id.pointsTxt);
+            pointsTxt = itemView.findViewById(R.id.points1Txt);
 
 
         }
