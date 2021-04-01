@@ -103,11 +103,11 @@
                 android:layout_marginLeft="7dp"
                 android:layout_marginTop="7dp"
                 android:padding="5dp"
-                app:srcCompat="@drawable/rectangleactivity" />
+                app:srcCompat="@drawable/rectangle123" />
 
             <TextView
                 android:id="@+id/textTitle434"
-                android:layout_width="293dp"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
@@ -142,11 +142,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp" />
-
-
+                android:layout_height="match_parent" />
 
 
         </RelativeLayout>
