@@ -6,12 +6,28 @@
     android:layout_height="match_parent"
     android:background="#F8FBFF"
     app:cardBackgroundColor="#F8FBFF"
-    tools:context=".AtividadesList"
-    >
+    tools:context=".EvaluationActivity">
 
+    <TextView
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="303dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        android:layout_marginBottom="49dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Quantas mais estrelas, mais gostas!"
+        android:textColor="#143656"
+        android:textSize="24dp" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/button64"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="10dp"
@@ -19,14 +35,14 @@
         android:layout_marginTop="13dp"
         android:background="@drawable/ic_back"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@id/toolbar9"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar12"
+        app:layout_constraintEnd_toEndOf="@id/toolbar12"
         app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="@id/toolbar9"
-        app:layout_constraintTop_toTopOf="@id/toolbar9" />
+        app:layout_constraintStart_toStartOf="@id/toolbar12"
+        app:layout_constraintTop_toTopOf="@id/toolbar12" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar9"
+        android:id="@+id/toolbar12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="37dp"
@@ -39,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/defitionsButton2"
+        android:id="@+id/defitionsButton86"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="348dp"
@@ -49,57 +65,72 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/ic_baseline_settings_24"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar12"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar12"
         app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        app:layout_constraintStart_toStartOf="@+id/toolbar12"
+        app:layout_constraintTop_toTopOf="@+id/toolbar12" />
 
     <TextView
-        android:id="@+id/textView20"
-        android:layout_width="251dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
+        android:id="@+id/textView154"
+        android:layout_width="215dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginTop="117dp"
         android:layout_marginBottom="583dp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
-        android:text="@string/string_atividades_para_ti"
+        android:text="GOSTAS DESTAS"
+        android:textColor="#143656"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView134"
+        android:layout_width="203dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginBottom="583dp"
+        android:fontFamily="@font/rubik_light"
+        android:lineSpacingExtra="30.81sp"
+        android:text="ATIVIDADES?"
         android:textColor="#143656"
         android:textSize="26sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView245"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="45dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/ic_game"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/ic_gameevalution"
         tools:ignore="VectorDrawableCompat" />
 
-
     <LinearLayout
-        android:id="@+id/containerActivity"
+        android:id="@+id/containerActivity1"
         android:layout_width="match_parent"
-        android:layout_height="611dp"
-        android:layout_marginTop="200dp"
+        android:layout_height="586dp"
+        android:layout_marginTop="220dp"
         android:background="#F8FBFF"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/container2"
+            android:id="@+id/container42"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="571dp"
+            android:layout_marginTop="15dp"
             android:background="#F8FBFF">
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view4"
+                android:id="@+id/recycler_view43"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="591dp" />
 
 
         </RelativeLayout>

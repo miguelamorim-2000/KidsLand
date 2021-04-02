@@ -9,67 +9,65 @@
 
     <Button
         android:id="@+id/historyBtn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
 
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginRight="250dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
         android:background="@drawable/ic_puzzle_game"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/factsButton" />
+        app:layout_constraintEnd_toStartOf="@+id/prizesButton"
+        app:layout_constraintTop_toBottomOf="@+id/mapButton" />
 
     <Button
         android:id="@+id/prizesButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginLeft="94dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginRight="59dp"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
         android:background="@drawable/prize"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/sugestionsButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/factsButton"
-        app:layout_constraintTop_toBottomOf="@+id/mapButton" />
+        app:layout_constraintTop_toBottomOf="@+id/gameEvaButton" />
 
     <Button
         android:id="@+id/mapButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="91dp"
-        android:layout_marginLeft="91dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginRight="59dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/ic_map"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/prizesButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gameButton"
+        app:layout_constraintStart_toEndOf="@+id/gameButton2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/gameButton"
+        android:id="@+id/gameEvaButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginRight="250dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/ic_gameevalution"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/gameButton2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/ic_game"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/factsButton"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -77,34 +75,25 @@
         android:id="@+id/sugestionsButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/ic_info"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/historyBtn"
-        app:layout_constraintTop_toBottomOf="@+id/prizesButton"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/factsButton" />
 
     <Button
         android:id="@+id/factsButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginRight="250dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/ic_buildings"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/historyBtn"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gameButton" />
+        app:layout_constraintTop_toBottomOf="@+id/gameButton2" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -161,18 +150,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="@drawable/ic_back"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/defitionsButton"

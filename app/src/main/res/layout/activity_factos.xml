@@ -92,7 +92,7 @@
         <RelativeLayout
             android:id="@+id/container254"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="606dp"
             android:background="#F8FBFF">
 
             <ImageView
@@ -133,9 +133,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_viewFacts"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="3dp"
-                android:layout_marginLeft="3dp" />
+                android:layout_height="606dp"
+
+        />
 
 
         </RelativeLayout>

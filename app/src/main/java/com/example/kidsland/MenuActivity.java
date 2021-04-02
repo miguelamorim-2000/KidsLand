@@ -18,7 +18,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button btnActivities;
     private Button btnHistoric;
     private Button btnSuggestions;
-    private Button btnDefinitions, mapButton,historyBtn;
+    private Button btnDefinitions, mapButton,historyBtn, gameEvaButton;
 
 
     @Override
@@ -28,12 +28,13 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         btnPrizes = (Button)findViewById(R.id.prizesButton);
-        btnActivities = (Button)findViewById(R.id.gameButton);
+        btnActivities = (Button)findViewById(R.id.gameButton2);
         btnDefinitions = (Button)findViewById(R.id.defitionsButton);
         btnFacts = (Button)findViewById(R.id.factsButton);
         mapButton = (Button)findViewById(R.id.mapButton);
         historyBtn = (Button) findViewById(R.id.historyBtn);
         btnSuggestions = (Button) findViewById(R.id.sugestionsButton);
+        gameEvaButton = (Button) findViewById(R.id.gameEvaButton);
 
 
 
@@ -121,6 +122,17 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.SugestionActivity.class);
+                startActivity(intent);
+
+
+            }
+
+        });
+
+        gameEvaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.EvaluationActivity.class);
                 startActivity(intent);
 
 
