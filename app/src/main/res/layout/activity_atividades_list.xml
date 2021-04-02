@@ -74,8 +74,8 @@
         android:id="@+id/imageView7"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="100dp"
         app:srcCompat="@drawable/ic_game"
         tools:ignore="VectorDrawableCompat" />
@@ -95,49 +95,6 @@
             android:layout_height="match_parent"
             android:background="#F8FBFF">
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="7dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/rectangle123" />
-
-            <TextView
-                android:id="@+id/textTitle434"
-                android:layout_width="225dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/rubik"
-                android:paddingTop="10dp"
-                android:textColor="#143656"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textLocation34"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView8"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="30dp"
-                android:textColor="#143656"
-                android:textSize="14dp" />
-
-            <ImageView
-                android:id="@+id/activityLogo"
-                android:layout_width="41dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="35dp"
-                tools:srcCompat="@tools:sample/avatars" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view4"

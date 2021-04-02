@@ -86,8 +86,8 @@ public class PremiosActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     String body = response.body().string();
 
-                    try {
-                        JSONObject root = new JSONObject(body);
+                  try {
+                            JSONObject root = new JSONObject(body);
                         System.out.println(root);
                         int points = 0;
 

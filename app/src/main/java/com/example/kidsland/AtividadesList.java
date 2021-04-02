@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidsland.backend.ListItem;
+import com.example.kidsland.backend.SessionManagement;
 import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
@@ -35,6 +36,7 @@ public class AtividadesList extends AppCompatActivity {
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
     private Button backbutton;
+    private int id_child;
 
 
 
@@ -47,6 +49,11 @@ public class AtividadesList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividades_list);
         backbutton = findViewById(R.id.button9);
+
+        //PASS ID OF CHILD
+        SessionManagement sessionManagement = new SessionManagement(AtividadesList.this);
+        id_child = sessionManagement.getID_CHILD();
+
 
 
 
@@ -88,10 +95,18 @@ public class AtividadesList extends AppCompatActivity {
                         JSONObject jsonItem = msg.getJSONObject(i);
 
 
+                    // GET DATE AND FORMAT
+                        /*
+                        Date myDate=new Date(jsonItem.getString("time"));
+                        DateFormat df=new SimpleDateFormat("H:mm");
+                        String myDateStr= df.format(myDate);
+
+
+*/
 
 
                         listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
-                                " , " +jsonItem.getString("district" ), jsonItem.getString("photo")));
+                                " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_activity"), jsonItem.getString("time")));
 
 
 
@@ -102,7 +117,7 @@ public class AtividadesList extends AppCompatActivity {
 
 
                         //Create Recycler View
-                        mAdapter = new AtividadesListAdapter(listItems);
+                        mAdapter = new AtividadesListAdapter(listItems, id_child, AtividadesList.this);
                         mRecyclerView.setLayoutManager(mLayoutManager);
 
                         //CREATE ADAPTER
@@ -144,4 +159,6 @@ public class AtividadesList extends AppCompatActivity {
 
 
     }
+
+
 }

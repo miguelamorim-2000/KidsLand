@@ -27,11 +27,11 @@
 
             <TextView
                 android:id="@+id/textTitle434"
-                android:layout_width="293dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/rubik"
                 android:textColor="#143656"
                 android:textSize="20dp"
@@ -39,11 +39,11 @@
 
             <TextView
                 android:id="@+id/textLocation34"
-                android:layout_width="match_parent"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="46dp"
                 android:textColor="#143656"
                 android:textSize="14dp" />
 
@@ -56,8 +56,49 @@
                 android:layout_width="41dp"
                 android:layout_height="42dp"
                 android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="40dp" />
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="29dp" />
+
+            <Button
+                android:id="@+id/participatebtn"
+                android:layout_width="102dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="sans-serif"
+                android:text="Participar!"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:backgroundTint="#46D0D9" />
+
+            <Button
+                android:id="@+id/participatebtn2"
+                android:layout_width="102dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="sans-serif"
+                android:text="Inscrito!"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:backgroundTint="#4CAF50" />
+
+            <TextView
+                android:id="@+id/timeActivity"
+                android:layout_width="60dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="317dp"
+                android:layout_marginLeft="325dp"
+                android:layout_marginTop="49dp"
+                android:textColor="#143656"
+                android:textSize="20dp" />
         </RelativeLayout>
 
 
