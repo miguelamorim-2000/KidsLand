@@ -63,7 +63,7 @@ public class EvaluationActivity extends AppCompatActivity {
 
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
 
 
@@ -71,7 +71,7 @@ public class EvaluationActivity extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestFutureGet";
+        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestNonActivityGet";
 
         Request request = new Request.Builder().url(url).build();
 
@@ -96,7 +96,7 @@ public class EvaluationActivity extends AppCompatActivity {
                             // GET DATE AND FORMAT
 
                             listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
-                                    " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_activity"), jsonItem.getString("time")));
+                                    " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_request"), jsonItem.getString("time")));
 
 
 

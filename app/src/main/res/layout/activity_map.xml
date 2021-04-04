@@ -84,14 +84,49 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="490dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView21"
         app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/editTextTextPersonName467"
+        android:layout_width="305dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="Vê no mapa a localização das atividades"
+        android:textColor="#143656"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName456"
+        android:layout_width="235dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="38dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/rancho"
+        android:inputType="textPersonName"
+        android:text="em que vais poder participar!"
+        android:textColor="#143656"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

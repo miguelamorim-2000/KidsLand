@@ -28,6 +28,7 @@ public class DefinicoesActivity extends AppCompatActivity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private String[] manifestLocation = {Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION};
+    private int STORAGE_PERMISSION_GRANTED = 1;
 
     private static final String TAG ="SearchActivity";
     private static final int REQUEST_CODE = 1;
@@ -96,6 +97,7 @@ public class DefinicoesActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 verifyPermissionLocation();
 
             }
@@ -129,13 +131,9 @@ public class DefinicoesActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
     //Verify or Ask for access to the camera
     private void verifyPermissionCamara (){
-        Log.d(TAG, "verifyPermissions: asking user for permissions");
+        Log.d(TAG, "verifyPermissions: asking user for permissions kkkkkkkkkkkkk");
         String[] permissions = {Manifest.permission.CAMERA};
 
         if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
@@ -146,11 +144,12 @@ public class DefinicoesActivity extends AppCompatActivity {
                     permissions,
                     REQUEST_CODE);
         }
+
     }
 
     //Verify or Ask for access to the storage
     private void verifyPermissionStorage (){
-        Log.d(TAG, "verifyPermissions: asking user for permissions");
+        Log.d(TAG, "verifyPermissions: asking user for permissions!!!!!!!");
         String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -161,14 +160,16 @@ public class DefinicoesActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(DefinicoesActivity.this,
                     permissions,
                     REQUEST_CODE);
+
         }
     }
 
     //Verify or Ask for access to the Location
     private void verifyPermissionLocation (){
-        Log.d(TAG, "verifyPermissions: asking user for permissions");
-        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
-                /*Manifest.permission.ACCESS_COARSE_LOCATION*/};
+        Log.d(TAG, "verifyPermissions: asking user for permissions Location!!!!!!!");
+
+     String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION};
 
         if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 permissions[0]) == PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this.getApplicationContext(),
@@ -177,12 +178,45 @@ public class DefinicoesActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(DefinicoesActivity.this,
                     permissions,
                     REQUEST_CODE);
+
         }
+
     }
 
+
+
+
+
+
+
+/*
+    private void requestLocationPermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)){
+
+                new AlertDialog.Builder(this)
+                        .setTitle("Permission needed")
+                        .setMessage("This permission is needed)")
+                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ActivityCompat.requestPermissions(DefinicoesActivity.this, new String[] {Manifest.permission.ACCESS_COARSE_LOCATION},STORAGE_PERMISSION_GRANTED);
+
+                            }
+                        }).setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create().show();
+        }else{
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACCESS_COARSE_LOCATION},STORAGE_PERMISSION_GRANTED);
+        }
+    }
+*/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-    verifyPermissionCamara();    }
+
+            }
 
 
 

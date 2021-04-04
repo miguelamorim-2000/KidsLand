@@ -4,16 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <LinearLayout
-        android:id="@+id/containerActivity1"
+        android:id="@+id/containerActivity145"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/container24"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="287dp">
 
             <ImageView
                 android:id="@+id/imageView78"
@@ -22,7 +23,7 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="0dp"
-                app:srcCompat="@drawable/rectangle123" />
+                app:srcCompat="@drawable/rectangle2312" />
 
 
             <TextView
@@ -31,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="45dp"
                 android:fontFamily="@font/rubik"
                 android:gravity="center_horizontal"
                 android:textColor="#143656"
@@ -48,20 +49,40 @@
                 android:layout_height="42dp"
                 android:layout_marginStart="35dp"
                 android:layout_marginLeft="22dp"
-                android:layout_marginTop="26dp" />
+                android:layout_marginTop="80dp" />
 
             <RatingBar
                 android:id="@+id/rating_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="155dp"
                 android:numStars="5"
                 android:scaleX="0.8"
                 android:scaleY="0.8"
-                android:stepSize="1"
-                android:theme="@style/RatingBar"
-                />
+                android:stepSize="1"/>
+                <!--android:theme="@style/RatingBar" -->
+
+            <TextView
+                android:id="@+id/textLocation34"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="90dp"
+                android:gravity="center_horizontal"
+                android:textColor="#143656"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/timeActivity2"
+                android:layout_width="60dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="170dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="115dp"
+                android:textColor="#143656"
+                android:textSize="20dp" />
 
 
         </RelativeLayout>

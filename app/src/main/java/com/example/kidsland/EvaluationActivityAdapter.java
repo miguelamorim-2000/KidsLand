@@ -11,34 +11,46 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.request.RequestOptions;
 import com.example.kidsland.backend.ListItem;
+import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.squareup.picasso.Picasso;
 
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
-import cz.msebera.android.httpclient.Header;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationActivityAdapter.ViewHolder> {
 
     ArrayList<ListItem> items;
     RequestOptions option;
     AsyncHttpClient client;
+    AsyncHttpClient client1;
     RequestParams params;
-    String URL ="http://188.82.156.135:8080/Back-end/SubscriptionPost";
-    String URL2 ="http://188.82.156.135:8080/Back-end/SubscriptionDelete";
+    String URL ="http://188.82.156.135:8080/Back-end/evaluation_requestPost";
     int id_childPost;
     Context context;
     RatingBar rating_bar;
-    int id_activity;
+    int id_request;
+    String status_evaluation = "";
+    float points = 0;
+
+
 
 
 
@@ -64,61 +76,188 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
     @Override
     public void onBindViewHolder(@NonNull EvaluationActivityAdapter.ViewHolder holder, int position) {
         holder.title.setText(items.get(position).getTittle());
-        holder.itemView.findViewById(R.id.containerActivity1).setBackgroundColor(Color.parseColor("#F8FBFF"));
+        holder.itemView.findViewById(R.id.containerActivity145).setBackgroundColor(Color.parseColor("#F8FBFF"));
         holder.itemView.findViewById(R.id.textTitleEvaluation).setPadding(0,40,20,40);
-        id_activity = items.get(position).getId_item();
+        holder.timeActivity2.setText(items.get(position).getTime());
+        holder.textLocation34.setText(items.get(position).getLocation());
 
+        id_request = items.get(position).getId_item();
+        status_evaluation = "";
+
+
+
+
+        //CHECK IF REQUEST WAS ALREADY EVALUATED
+        //HTTP GET
+        OkHttpClient client1 = new OkHttpClient();
+        System.out.println(id_childPost);
+        System.out.println(id_request);
+
+
+        String url = "http://188.82.156.135:8080/Back-end/EvaluationRequestGetId?id_child="+id_childPost+"&id_request="+id_request;
+
+        Request request = new Request.Builder().url(url).build();
+
+        client1.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                if (response.isSuccessful()){
+                    String body = response.body().string();
+
+                    try {
+
+                        JSONObject root = new JSONObject(body);
+                        System.out.println(root);
+                        status_evaluation = root.getString("STATUS");
+                        if (status_evaluation.equals("200")) {
+
+                            JSONArray msg = root.getJSONArray("MSG");
+
+
+                            for (int i = 0; i < msg.length(); i++) {
+                                JSONObject jsonItem = msg.getJSONObject(i);
+
+
+                                // GET DATE AND FORMAT
+                                points = jsonItem.getInt("points");
+                                System.out.println(points);
+
+
+                            }
+                        }
+
+                        //SET EVALUATION IF ALREADY DONE
+                        ((AppCompatActivity) context).runOnUiThread(() -> {
+
+                            if (status_evaluation.equals("200")){
+                                System.out.println(points);
+                                rating_bar.setRating(points);
+                            }
+
+
+
+
+
+                        });
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    Gson gson = new Gson();
+
+
+                }
+            }
+        });
+
+
+/*
+        //EVALUATING A ACTIVITY REQUEST
         rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
 
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
 
-                //FETCH POST
-                params= new RequestParams();
-                params.put("id_child", id_childPost);
-                params.put("id_activity", id_activity);
-                params.put("evaluation", rating);
+                if ( status_evaluation.equals("200")) {
 
-                client = new AsyncHttpClient();
-                client.post(URL, params, new JsonHttpResponseHandler(){
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                        super.onSuccess(statusCode, headers, response);
-                        System.out.println(response);
+                    //FETCH UPDATE
+                    params = new RequestParams();
+                    params.put("id_child", id_childPost);
+                    params.put("id_request", id_request);
+                    params.put("points", rating);
 
-                        //INICIALIZE VARIABLES
-                        String status = "";
+                    client = new AsyncHttpClient();
+                    client.post("http://188.82.156.135:8080/Back-end/EvaluationRequestPut", params, new JsonHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                            super.onSuccess(statusCode, headers, response);
+                            System.out.println(response);
 
-                        //GET STATUS OF OPERATION
-                        try {
-                            status = response.getString("STATUS");
-                        } catch (JSONException jsonException) {
-                            jsonException.printStackTrace();
+                            //INICIALIZE VARIABLES
+                            String status = "";
+
+                            //GET STATUS OF OPERATION
+                            try {
+                                status = response.getString("STATUS");
+                            } catch (JSONException jsonException) {
+                                jsonException.printStackTrace();
+                            }
+                            if (status.equals("200")) {
+                                System.out.println("Avaliado com sucesso");
+
+
+                            }
+
+                            if (status.equals("400")) {
+
+
+                            }
+
                         }
-                        if (status.equals("200")){
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
+                            System.out.println(errorResponse);
+                        }
+
+                    });
 
 
 
+                } else {
+                    //FETCH POST
+                    params = new RequestParams();
+                    params.put("id_child", id_childPost);
+                    params.put("id_request", id_request);
+                    params.put("points", rating);
+
+                    client = new AsyncHttpClient();
+                    client.post(URL, params, new JsonHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                            super.onSuccess(statusCode, headers, response);
+                            System.out.println(response);
+
+                            //INICIALIZE VARIABLES
+                            String status = "";
+
+                            //GET STATUS OF OPERATION
+                            try {
+                                status = response.getString("STATUS");
+                            } catch (JSONException jsonException) {
+                                jsonException.printStackTrace();
+                            }
+                            if (status.equals("200")) {
+                                System.out.println("Avaliado com sucesso");
+
+
+                            }
+
+                            if (status.equals("400")) {
+
+
+                            }
 
                         }
 
-                        if (status.equals("400")){
-
-
-
-
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                            super.onFailure(statusCode, headers, throwable, errorResponse);
+                            System.out.println(errorResponse);
                         }
 
-                    }
+                    });
 
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                        super.onFailure(statusCode, headers, throwable, errorResponse);
-                        System.out.println(errorResponse);
-                    }
-
-                });
+                }
 
 
 
@@ -129,16 +268,10 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
             }
         });
-        rating_bar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println(rating_bar.getRating());
-                System.out.println("ola");
-            }
-        });
 
 
 
+*/
 
 
         //SHOW PHOTO
@@ -164,7 +297,7 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView title;
+        public TextView title, textLocation34, timeActivity2;
         public ImageView activityLogo;
         public RecyclerView recyclerView;
 
@@ -175,6 +308,8 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
             activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo2);
             recyclerView = itemView.findViewById(R.id.recycler_view43);
             rating_bar = itemView.findViewById(R.id.rating_bar);
+            textLocation34 = itemView.findViewById(R.id.textLocation34);
+            timeActivity2 = itemView.findViewById(R.id.timeActivity2);
 
 
 

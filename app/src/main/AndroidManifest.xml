@@ -30,7 +30,6 @@
         <activity android:name=".AtividadesList" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PremiosActivity" />
-        <activity android:name=".InscreverAtividadeActivity" />
         <activity android:name=".FactosActivity" />
         <activity android:name=".EditarDadosLoginActivity" />
         <activity android:name=".VisualizarDadosCriancaActivity" />
