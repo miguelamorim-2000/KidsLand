@@ -43,7 +43,7 @@ public class EvaluationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evaluation);
+        setContentView(R.layout.activity_evaluation2);
         backbutton = findViewById(R.id.button64);
 
 
@@ -63,7 +63,7 @@ public class EvaluationActivity extends AppCompatActivity {
 
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
 
 

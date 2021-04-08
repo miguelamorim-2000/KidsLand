@@ -84,7 +84,7 @@
     <LinearLayout
         android:id="@+id/containerActivity232"
         android:layout_width="match_parent"
-        android:layout_height="611dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:background="#F8FBFF"
         android:orientation="vertical">
@@ -92,7 +92,7 @@
         <RelativeLayout
             android:id="@+id/container254"
             android:layout_width="match_parent"
-            android:layout_height="606dp"
+            android:layout_height="wrap_content"
             android:background="#F8FBFF">
 
             <ImageView
@@ -106,7 +106,7 @@
                 app:srcCompat="@drawable/rectangle22" />
 
             <TextView
-                android:id="@+id/textTitle434"
+                android:id="@+id/textTitle4345"
                 android:layout_width="293dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -119,10 +119,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textLocation34"
+                android:id="@+id/textLocation3467"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView8"
+                android:layout_alignBottom="@+id/imageView77"
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="50dp"

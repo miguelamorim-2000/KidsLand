@@ -6,6 +6,7 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -45,7 +46,6 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
     String URL ="http://188.82.156.135:8080/Back-end/evaluation_requestPost";
     int id_childPost;
     Context context;
-    RatingBar rating_bar;
     int id_request;
     String status_evaluation = "";
     float points = 0;
@@ -64,7 +64,7 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
     }
     @Override
     public EvaluationActivityAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowevaluation, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowevaluation1, parent, false);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         return new EvaluationActivityAdapter.ViewHolder(view);
@@ -82,7 +82,9 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
         holder.textLocation34.setText(items.get(position).getLocation());
 
         id_request = items.get(position).getId_item();
-        status_evaluation = "";
+        System.out.println("id"+id_request);
+
+
 
 
 
@@ -129,6 +131,8 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
 
                             }
+                        } else {
+                            points = 0;
                         }
 
                         //SET EVALUATION IF ALREADY DONE
@@ -136,8 +140,10 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
                             if (status_evaluation.equals("200")){
                                 System.out.println(points);
-                                rating_bar.setRating(points);
-                            }
+                                holder.rating_bar.setRating(points);
+                            } else {holder.rating_bar.setRating(points);}
+
+
 
 
 
@@ -157,7 +163,19 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
             }
         });
 
+        holder.button12312.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("-------------------------");
+                System.out.println(id_request);
+                System.out.println(points);
+                System.out.println(status_evaluation);
+                System.out.println(id_childPost);
+                System.out.println(id_request);
+                System.out.println("-------------------------");
 
+            }
+        });
 /*
         //EVALUATING A ACTIVITY REQUEST
         rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -168,16 +186,20 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
                 if ( status_evaluation.equals("200")) {
 
-                    //FETCH UPDATE
+                  /*  @PUT("posts/{id}")
+                            CALL <Post> putPost(@Path("id") int id, @Body Post post)*/
+  /*                  //FETCH UPDATE
                     params = new RequestParams();
                     params.put("id_child", id_childPost);
                     params.put("id_request", id_request);
                     params.put("points", rating);
 
+
                     client = new AsyncHttpClient();
-                    client.post("http://188.82.156.135:8080/Back-end/EvaluationRequestPut", params, new JsonHttpResponseHandler() {
+                    client.put("http://188.82.156.135:8080/Back-end/EvaluationRequestPut", params, new JsonHttpResponseHandler() {
+
                         @Override
-                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
                             super.onSuccess(statusCode, headers, response);
                             System.out.println(response);
 
@@ -191,7 +213,7 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
                                 jsonException.printStackTrace();
                             }
                             if (status.equals("200")) {
-                                System.out.println("Avaliado com sucesso");
+                                System.out.println("Reavaliado com sucesso");
 
 
                             }
@@ -204,12 +226,13 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
                         }
 
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                        public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, JSONObject errorResponse) {
                             super.onFailure(statusCode, headers, throwable, errorResponse);
                             System.out.println(errorResponse);
                         }
 
                     });
+
 
 
 
@@ -223,7 +246,7 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
                     client = new AsyncHttpClient();
                     client.post(URL, params, new JsonHttpResponseHandler() {
                         @Override
-                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
                             super.onSuccess(statusCode, headers, response);
                             System.out.println(response);
 
@@ -250,7 +273,7 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
                         }
 
                         @Override
-                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                        public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, JSONObject errorResponse) {
                             super.onFailure(statusCode, headers, throwable, errorResponse);
                             System.out.println(errorResponse);
                         }
@@ -269,9 +292,8 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
             }
         });
 
-
-
 */
+
 
 
         //SHOW PHOTO
@@ -300,6 +322,9 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
         public TextView title, textLocation34, timeActivity2;
         public ImageView activityLogo;
         public RecyclerView recyclerView;
+        public Button button12312;
+        RatingBar rating_bar;
+
 
 
         public ViewHolder (View itemView){
@@ -308,8 +333,10 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
             activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo2);
             recyclerView = itemView.findViewById(R.id.recycler_view43);
             rating_bar = itemView.findViewById(R.id.rating_bar);
-            textLocation34 = itemView.findViewById(R.id.textLocation34);
+            textLocation34 = itemView.findViewById(R.id.textLocation3467);
             timeActivity2 = itemView.findViewById(R.id.timeActivity2);
+            button12312 = itemView.findViewById(R.id.participatebtn98);
+
 
 
 

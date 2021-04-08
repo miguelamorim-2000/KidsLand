@@ -1,19 +1,10 @@
 package com.example.kidsland;
 
-import android.app.ActionBar;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
     private Button botaoLogin;
@@ -27,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            botaoLogin = (Button)findViewById(R.id.buttonLogin);
+            botaoLogin = (Button)findViewById(R.id.buttonApply);
 
 
         }

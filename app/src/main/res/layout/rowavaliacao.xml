@@ -6,20 +6,20 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/containerActivity43"
+        android:id="@+id/containerActivity4443"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/container54776"
+            android:id="@+id/container5477336"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-     >
+            >
 
             <ImageView
-                android:id="@+id/imageView77"
+                android:id="@+id/imageView77123"
                 android:layout_width="397dp"
                 android:layout_height="161dp"
                 android:layout_marginStart="-2dp"
@@ -27,7 +27,7 @@
                 android:background="@drawable/rectangle123" />
 
             <TextView
-                android:id="@+id/textTitle4345"
+                android:id="@+id/textTitle434345"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -39,7 +39,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textLocation3467"
+                android:id="@+id/textLocation3464547"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -53,7 +53,7 @@
                 android:layout_height="match_parent" />
 
             <ImageView
-                android:id="@+id/activityLogo89"
+                android:id="@+id/activityLogo865659"
                 android:layout_width="41dp"
                 android:layout_height="42dp"
                 android:layout_marginStart="25dp"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="39dp" />
 
             <Button
-                android:id="@+id/participatebtn98"
+                android:id="@+id/participatebtn65698"
                 android:layout_width="102dp"
                 android:layout_height="37dp"
                 android:layout_marginLeft="145dp"
@@ -76,7 +76,23 @@
                 app:backgroundTint="#46D0D9" />
 
             <Button
-                android:id="@+id/participatebtn276"
+                android:id="@+id/participatebtn275656"
+                android:layout_width="102dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginTop="90dp"
+                android:fontFamily="sans-serif"
+                android:text="Inscrito!"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:backgroundTint="#4CAF50" />
+
+            <Button
+                android:id="@+id/participatebtn27623"
                 android:layout_width="102dp"
                 android:layout_height="37dp"
                 android:layout_marginLeft="145dp"
@@ -92,7 +108,7 @@
                 app:backgroundTint="#4CAF50" />
 
             <TextView
-                android:id="@+id/timeActivity676"
+                android:id="@+id/timeActivity656576"
                 android:layout_width="60dp"
                 android:layout_height="22dp"
                 android:layout_marginStart="317dp"

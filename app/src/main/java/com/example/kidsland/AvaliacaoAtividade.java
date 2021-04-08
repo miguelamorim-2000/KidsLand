@@ -27,8 +27,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class AtividadesList extends AppCompatActivity {
-
+public class AvaliacaoAtividade extends AppCompatActivity {
     //Instance Variables
     private static final String TAG = "AtividadesList";
     ArrayList<ListItem> listItems;
@@ -39,29 +38,22 @@ public class AtividadesList extends AppCompatActivity {
     private int id_child;
 
 
-
-
-
-    //Constructors
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atividades_list);
-        backbutton = findViewById(R.id.button9);
+        setContentView(R.layout.activity_avaliacao_atividade);
+        backbutton = findViewById(R.id.button2651231);
 
         //PASS ID OF CHILD
-        SessionManagement sessionManagement = new SessionManagement(AtividadesList.this);
+        SessionManagement sessionManagement = new SessionManagement(AvaliacaoAtividade.this);
         id_child = sessionManagement.getID_CHILD();
-
-
-
 
         //FETCH ACTIVITIES FROM DATABASE
 
         listItems = new ArrayList<>();
         //Create Recycler View
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view54665);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view54623165);
 
 
         mRecyclerView.setHasFixedSize(true);
@@ -73,7 +65,7 @@ public class AtividadesList extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestFutureGet";
+        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestNonActivityGet";
 
         Request request = new Request.Builder().url(url).build();
 
@@ -85,64 +77,54 @@ public class AtividadesList extends AppCompatActivity {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-            if (response.isSuccessful()){
-               String body = response.body().string();
+                if (response.isSuccessful()){
+                    String body = response.body().string();
 
-                try {
-                    JSONObject root = new JSONObject(body);
-                    JSONArray msg = root.getJSONArray("MSG");
-                    for ( int i = 0; i < msg.length(); i++) {
-                        JSONObject jsonItem = msg.getJSONObject(i);
-
-
-                    // GET DATE AND FORMAT
-                        /*
-                        Date myDate=new Date(jsonItem.getString("time"));
-                        DateFormat df=new SimpleDateFormat("H:mm");
-                        String myDateStr= df.format(myDate);
+                    try {
+                        JSONObject root = new JSONObject(body);
+                        JSONArray msg = root.getJSONArray("MSG");
+                        for ( int i = 0; i < msg.length(); i++) {
+                            JSONObject jsonItem = msg.getJSONObject(i);
 
 
-*/
 
-
-                        listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
-                                " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_activity"), jsonItem.getString("time")));
+                            listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
+                                    " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_request"), jsonItem.getString("time")));
 
 
 
 
-                    }
-
-                    AtividadesList.this.runOnUiThread(() -> {
-
-
-                        //Create Recycler View
-                        mAdapter = new AtividadesListAdapter(listItems, id_child, AtividadesList.this);
-                        mRecyclerView.setLayoutManager(mLayoutManager);
-
-                        //CREATE ADAPTER
-                        mRecyclerView.setAdapter(mAdapter);
-
-
-                        System.out.println(listItems);
-                        for (int j=0; j < listItems.size(); j++){
-                            Log.d(TAG, "onCreate: "+ listItems.get(j));
                         }
 
-                    });
+                        AvaliacaoAtividade.this.runOnUiThread(() -> {
+
+
+                            //Create Recycler View
+                            mAdapter = new AvaliacaoAtividadeAdapter(listItems, id_child, AvaliacaoAtividade.this);
+                            mRecyclerView.setLayoutManager(mLayoutManager);
+
+                            //CREATE ADAPTER
+                            mRecyclerView.setAdapter(mAdapter);
+
+
+                            System.out.println(listItems);
+                            for (int j=0; j < listItems.size(); j++){
+                                Log.d(TAG, "onCreate: "+ listItems.get(j));
+                            }
+
+                        });
 
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    Gson gson = new Gson();
+
+
                 }
-                Gson gson = new Gson();
-
-
-            }
             }
         });
-
 
         //ON CLICK ICONS
 
@@ -155,10 +137,5 @@ public class AtividadesList extends AppCompatActivity {
 
         });
 
-
-
-
     }
-
-
 }

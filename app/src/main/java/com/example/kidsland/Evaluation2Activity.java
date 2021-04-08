@@ -27,10 +27,10 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class AtividadesList extends AppCompatActivity {
+public class Evaluation2Activity extends AppCompatActivity {
 
     //Instance Variables
-    private static final String TAG = "AtividadesList";
+    private static final String TAG = "Evaluation2Activity";
     ArrayList<ListItem> listItems;
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
@@ -47,11 +47,11 @@ public class AtividadesList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atividades_list);
-        backbutton = findViewById(R.id.button9);
+        setContentView(R.layout.activity_evaluation2);
+        backbutton = findViewById(R.id.button64);
 
         //PASS ID OF CHILD
-        SessionManagement sessionManagement = new SessionManagement(AtividadesList.this);
+        SessionManagement sessionManagement = new SessionManagement(Evaluation2Activity.this);
         id_child = sessionManagement.getID_CHILD();
 
 
@@ -61,7 +61,7 @@ public class AtividadesList extends AppCompatActivity {
 
         listItems = new ArrayList<>();
         //Create Recycler View
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view54665);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view433);
 
 
         mRecyclerView.setHasFixedSize(true);
@@ -73,7 +73,7 @@ public class AtividadesList extends AppCompatActivity {
         //HTTP GET
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestFutureGet";
+        String url = "http://188.82.156.135:8080/Back-end/ActivityRequestNonActivityGet";
 
         Request request = new Request.Builder().url(url).build();
 
@@ -85,61 +85,52 @@ public class AtividadesList extends AppCompatActivity {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-            if (response.isSuccessful()){
-               String body = response.body().string();
+                if (response.isSuccessful()){
+                    String body = response.body().string();
 
-                try {
-                    JSONObject root = new JSONObject(body);
-                    JSONArray msg = root.getJSONArray("MSG");
-                    for ( int i = 0; i < msg.length(); i++) {
-                        JSONObject jsonItem = msg.getJSONObject(i);
-
-
-                    // GET DATE AND FORMAT
-                        /*
-                        Date myDate=new Date(jsonItem.getString("time"));
-                        DateFormat df=new SimpleDateFormat("H:mm");
-                        String myDateStr= df.format(myDate);
+                    try {
+                        JSONObject root = new JSONObject(body);
+                        JSONArray msg = root.getJSONArray("MSG");
+                        for ( int i = 0; i < msg.length(); i++) {
+                            JSONObject jsonItem = msg.getJSONObject(i);
 
 
-*/
 
-
-                        listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
-                                " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_activity"), jsonItem.getString("time")));
+                            listItems.add(new ListItem(jsonItem.getString("description" ),jsonItem.getString("address") + " , " + jsonItem.getString("county" ) +
+                                    " , " +jsonItem.getString("district" ), jsonItem.getString("photo"), jsonItem.getInt("id_request"), jsonItem.getString("time")));
 
 
 
 
-                    }
-
-                    AtividadesList.this.runOnUiThread(() -> {
-
-
-                        //Create Recycler View
-                        mAdapter = new AtividadesListAdapter(listItems, id_child, AtividadesList.this);
-                        mRecyclerView.setLayoutManager(mLayoutManager);
-
-                        //CREATE ADAPTER
-                        mRecyclerView.setAdapter(mAdapter);
-
-
-                        System.out.println(listItems);
-                        for (int j=0; j < listItems.size(); j++){
-                            Log.d(TAG, "onCreate: "+ listItems.get(j));
                         }
 
-                    });
+                        Evaluation2Activity.this.runOnUiThread(() -> {
+
+
+                            //Create Recycler View
+                            mAdapter = new Evaluation1ActivityAdapter(listItems, id_child, Evaluation2Activity.this);
+                            mRecyclerView.setLayoutManager(mLayoutManager);
+
+                            //CREATE ADAPTER
+                            mRecyclerView.setAdapter(mAdapter);
+
+
+                            System.out.println(listItems);
+                            for (int j=0; j < listItems.size(); j++){
+                                Log.d(TAG, "onCreate: "+ listItems.get(j));
+                            }
+
+                        });
 
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    Gson gson = new Gson();
+
+
                 }
-                Gson gson = new Gson();
-
-
-            }
             }
         });
 

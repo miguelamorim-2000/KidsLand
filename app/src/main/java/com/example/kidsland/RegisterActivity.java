@@ -141,6 +141,12 @@ public class RegisterActivity extends AppCompatActivity {
                                         }
                                         if (status.equals("200")) {
                                             Toast.makeText(RegisterActivity.this, "Registado com sucesso!" , Toast.LENGTH_SHORT).show();
+                                            email.setText("");
+                                            password.setText("");
+                                            passwordConfirm.setText("");
+                                            telephone.setText("");
+                                            nameTxtRegister.setText("");
+
                                         }
 
                                         if (status.equals("400")){

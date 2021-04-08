@@ -82,24 +82,25 @@
 
 
     <LinearLayout
-        android:id="@+id/containerActivity"
+        android:id="@+id/containerActivity43"
         android:layout_width="match_parent"
-        android:layout_height="611dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:background="#F8FBFF"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/container2"
+            android:id="@+id/container54776"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#F8FBFF">
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view4"
+                android:id="@+id/recycler_view54665"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                />
 
 
         </RelativeLayout>

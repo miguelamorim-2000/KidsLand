@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <LinearLayout
         android:id="@+id/containerActivity145"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/container24"
-            android:layout_width="wrap_content"
-            android:layout_height="287dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
 
             <ImageView
                 android:id="@+id/imageView78"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="0dp"
                 app:srcCompat="@drawable/rectangle2312" />
-
 
             <TextView
                 android:id="@+id/textTitleEvaluation"
@@ -39,32 +37,8 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <ImageView
-                android:id="@+id/activityLogo2"
-                android:layout_width="41dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="35dp"
-                android:layout_marginLeft="22dp"
-                android:layout_marginTop="80dp" />
-
-            <RatingBar
-                android:id="@+id/rating_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="155dp"
-                android:numStars="5"
-                android:scaleX="0.8"
-                android:scaleY="0.8"
-                android:stepSize="1"/>
-                <!--android:theme="@style/RatingBar" -->
-
             <TextView
-                android:id="@+id/textLocation34"
+                android:id="@+id/textLocation3467"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -84,10 +58,51 @@
                 android:textColor="#143656"
                 android:textSize="20dp" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/activityLogo2"
+                android:layout_width="41dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="80dp" />
+
+            <Button
+                android:id="@+id/participatebtn98"
+                android:layout_width="102dp"
+                android:layout_height="37dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginTop="90dp"
+                android:fontFamily="sans-serif"
+                android:text="Participar!"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:backgroundTint="#46D0D9" />
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="155dp"
+                android:numStars="5"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:stepSize="1" />
+            <!--android:theme="@style/RatingBar" -->
+
+
 
         </RelativeLayout>
 
 
     </LinearLayout>
+
+
 
 </androidx.cardview.widget.CardView>

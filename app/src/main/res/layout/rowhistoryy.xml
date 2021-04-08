@@ -6,18 +6,18 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/containerActivity"
+        android:id="@+id/containerActivity43"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/container2"
+            android:id="@+id/container54776"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imageView77"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
@@ -26,7 +26,7 @@
                 app:srcCompat="@drawable/rectangleactivity" />
 
             <TextView
-                android:id="@+id/textTitle434"
+                android:id="@+id/textTitle4345"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -38,7 +38,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textLocation34"
+                android:id="@+id/textLocation3467"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -89,7 +89,7 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/activityLogo"
+                android:id="@+id/activityLogo89"
                 android:layout_width="41dp"
                 android:layout_height="42dp"
                 android:layout_marginStart="25dp"

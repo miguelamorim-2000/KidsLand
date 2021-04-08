@@ -58,16 +58,16 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.title.setText(items.get(position).getTittle());
         holder.description.setText("Realizada no dia : " + newDate);
         holder.pointsTxt.setText(String.valueOf(items.get(position).getPoints()));
-        holder.itemView.findViewById(R.id.containerActivity).setBackgroundColor(Color.parseColor("#F8FBFF"));
-        holder.itemView.findViewById(R.id.textTitle434).setPadding(0,40,20,40);
-        holder.itemView.findViewById(R.id.textLocation34).setPadding(0,30,20,40);
+        holder.itemView.findViewById(R.id.containerActivity43).setBackgroundColor(Color.parseColor("#F8FBFF"));
+        holder.itemView.findViewById(R.id.textTitle4345).setPadding(0,40,20,40);
+        holder.itemView.findViewById(R.id.textLocation3467).setPadding(0,30,20,40);
 
         String photo = items.get(position).getPhoto();
         System.out.println(photo);
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)
-                .into((ImageView) holder.itemView.findViewById(R.id.activityLogo));
+                .into((ImageView) holder.itemView.findViewById(R.id.activityLogo89));
         }
 
     @Override
@@ -84,10 +84,10 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
 
         public ViewHolder (View itemView){
             super (itemView);
-            title = itemView.findViewById(R.id.textTitle434);
-            description = itemView.findViewById(R.id.textLocation34);
-            activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo);
-            recyclerView = itemView.findViewById(R.id.recycler_view4);
+            title = itemView.findViewById(R.id.textTitle4345);
+            description = itemView.findViewById(R.id.textLocation3467);
+            activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo89);
+            recyclerView = itemView.findViewById(R.id.recycler_view54665);
             pointsTxt = itemView.findViewById(R.id.points1Txt);
 
 

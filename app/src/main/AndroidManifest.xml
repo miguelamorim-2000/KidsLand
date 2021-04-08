@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsLand"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EvaluationActivity"></activity>
+        <activity android:name=".AvaliacaoAtividade"></activity>
+        <activity android:name=".Evaluation2Activity" />
+        <activity android:name=".EvaluationActivity" />
         <activity android:name=".HistoryActivity" />
 
         <meta-data
@@ -31,7 +33,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".PremiosActivity" />
         <activity android:name=".FactosActivity" />
-        <activity android:name=".EditarDadosLoginActivity" />
         <activity android:name=".VisualizarDadosCriancaActivity" />
         <activity android:name=".DefinicoesActivity" />
         <activity android:name=".CriarPerfilActivity" />

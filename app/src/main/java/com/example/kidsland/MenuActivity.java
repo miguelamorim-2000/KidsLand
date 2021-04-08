@@ -18,7 +18,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button btnActivities;
     private Button btnHistoric;
     private Button btnSuggestions;
-    private Button btnDefinitions, mapButton,historyBtn, gameEvaButton;
+    private Button btnDefinitions, mapButton,historyBtn, gameEvaButton, profileButton;
 
 
     @Override
@@ -35,6 +35,7 @@ public class MenuActivity extends AppCompatActivity {
         historyBtn = (Button) findViewById(R.id.historyBtn);
         btnSuggestions = (Button) findViewById(R.id.sugestionsButton);
         gameEvaButton = (Button) findViewById(R.id.gameEvaButton);
+        profileButton = (Button) findViewById(R.id.profileButton);
 
 
 
@@ -132,7 +133,18 @@ public class MenuActivity extends AppCompatActivity {
         gameEvaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.EvaluationActivity.class);
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.AvaliacaoAtividade.class);
+                startActivity(intent);
+
+
+            }
+
+        });
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.VisualizarDadosCriancaActivity.class);
                 startActivity(intent);
 
 

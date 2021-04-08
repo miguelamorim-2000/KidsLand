@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,10 +5,12 @@
     android:layout_height="match_parent"
     android:background="#F8FBFF"
     app:cardBackgroundColor="#F8FBFF"
-    tools:context=".HistoryActivity">
+    tools:context=".AvaliacaoAtividade"
+    >
+
 
     <Button
-        android:id="@+id/backBtnHistory"
+        android:id="@+id/button2651231"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="10dp"
@@ -18,13 +19,13 @@
         android:background="@drawable/ic_back"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@id/toolbar11"
+        app:layout_constraintEnd_toEndOf="@id/toolbar9"
         app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="@id/toolbar11"
-        app:layout_constraintTop_toTopOf="@id/toolbar11" />
+        app:layout_constraintStart_toStartOf="@id/toolbar9"
+        app:layout_constraintTop_toTopOf="@id/toolbar9" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar11"
+        android:id="@+id/toolbar13123"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="37dp"
@@ -37,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/defitionsButton4"
+        android:id="@+id/defitionsButton61231"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="348dp"
@@ -47,82 +48,76 @@
         android:layout_marginRight="10dp"
         android:background="@drawable/ic_baseline_settings_24"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar11"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintStart_toStartOf="@+id/toolbar11"
-        app:layout_constraintTop_toTopOf="@+id/toolbar11" />
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
     <TextView
-        android:id="@+id/textView155"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/textView11231544"
+        android:layout_width="215dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="117dp"
         android:layout_marginBottom="583dp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
-        android:text="HISTÓRICO DE "
+        android:text="GOSTAS DESTAS"
         android:textColor="#143656"
         android:textSize="26sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="135dp"
+        android:id="@+id/textView11231344"
+        android:layout_width="203dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="151dp"
         android:layout_marginBottom="583dp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
-        android:text="ATIVIDADES"
+        android:text="ATIVIDADES?"
         android:textColor="#143656"
         android:textSize="26sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView245213126"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/ic_puzzle_game"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/ic_gameevalution"
         tools:ignore="VectorDrawableCompat" />
-    -->
 
     <LinearLayout
-        android:id="@+id/containerActivity43"
+        android:id="@+id/containerActivity23143"
         android:layout_width="match_parent"
-        android:layout_height="611dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:background="#F8FBFF"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/container54776"
+            android:id="@+id/container54712376"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#F8FBFF">
 
 
-
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view54665"
+                android:id="@+id/recycler_view54623165"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="2dp"
-                android:layout_marginLeft="2dp" />
-
-
+                android:layout_height="wrap_content"
+                />
 
 
         </RelativeLayout>
 
 
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

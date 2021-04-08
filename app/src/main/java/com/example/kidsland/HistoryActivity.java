@@ -60,7 +60,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         historyItems = new ArrayList<>();
         //Create Recycler View
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view4);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view54665);
 
 
         mRecyclerView.setHasFixedSize(true);

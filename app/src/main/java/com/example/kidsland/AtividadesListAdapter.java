@@ -78,9 +78,9 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(items.get(position).getTittle());
         holder.description.setText(items.get(position).getLocation());
-        holder.itemView.findViewById(R.id.containerActivity).setBackgroundColor(Color.parseColor("#F8FBFF"));
-        holder.itemView.findViewById(R.id.textTitle434).setPadding(0,40,20,40);
-        holder.itemView.findViewById(R.id.textLocation34).setPadding(0,30,20,40);
+        holder.itemView.findViewById(R.id.containerActivity43).setBackgroundColor(Color.parseColor("#F8FBFF"));
+        holder.itemView.findViewById(R.id.textTitle4345).setPadding(0,40,20,40);
+        holder.itemView.findViewById(R.id.textLocation3467).setPadding(0,30,20,40);
         holder.timeActivity.setText(items.get(position).getTime().toString());
 
         //IF CHILD HAS ALREADY SUBSCRIPTION TO ACTIVITY
@@ -154,15 +154,16 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)
-                .into((ImageView) holder.itemView.findViewById(R.id.activityLogo));
+                .into((ImageView) holder.itemView.findViewById(R.id.activityLogo89));
 
         //CLICK TO PARTICIPATE
         holder.participateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 id_activity= items.get(position).getId_item();
+                System.out.println("------------------------");
                 System.out.println(id_activity);
-
+                System.out.println("------------------------");
 
 
                 //FETCH POST
@@ -327,13 +328,13 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
 
         public ViewHolder (View itemView){
             super (itemView);
-            title = itemView.findViewById(R.id.textTitle434);
-            description = itemView.findViewById(R.id.textLocation34);
-            activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo);
-            recyclerView = itemView.findViewById(R.id.recycler_view4);
-            participateBtn = itemView.findViewById(R.id.participatebtn);
-            participateBtn2 = itemView.findViewById(R.id.participatebtn2);
-            timeActivity = itemView.findViewById(R.id.timeActivity);
+            title = itemView.findViewById(R.id.textTitle4345);
+            description = itemView.findViewById(R.id.textLocation3467);
+            activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo89);
+            recyclerView = itemView.findViewById(R.id.recycler_view54665);
+            participateBtn = itemView.findViewById(R.id.participatebtn98);
+            participateBtn2 = itemView.findViewById(R.id.participatebtn276);
+            timeActivity = itemView.findViewById(R.id.timeActivity676);
 
 
 
