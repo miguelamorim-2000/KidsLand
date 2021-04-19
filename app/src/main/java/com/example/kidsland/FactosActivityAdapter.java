@@ -41,7 +41,7 @@ public class FactosActivityAdapter extends RecyclerView.Adapter<FactosActivityAd
         holder.description.setText(items.get(position).getDescription());
         holder.itemView.findViewById(R.id.container434).setBackgroundColor(Color.parseColor("#F8FBFF"));
 
-        String photo = items.get(position).getPhoto();
+        String photo = "http://188.82.156.135:8080/Back-end/IMAGES/" + items.get(position).getPhoto();
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)

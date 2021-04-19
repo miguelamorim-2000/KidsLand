@@ -89,10 +89,7 @@ public class HistoryActivity extends AppCompatActivity {
                     try {
 
 
-                        JSONObject root = new JSONObject(body);
-                        System.out.println(root);
-                        JSONArray msg = root.getJSONArray("MSG");
-                        System.out.println(msg);
+                        JSONArray msg = new JSONArray(body);
 
 
                         for (int i = 0; i < msg.length(); i++) {

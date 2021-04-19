@@ -11,10 +11,10 @@
         android:id="@+id/imageView"
         android:layout_width="419dp"
         android:layout_height="734dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="196dp"
         android:contentDescription="@android:string/untitled"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vetor1" />
@@ -149,6 +149,23 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/editPhoto"
+        android:layout_width="73dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/rubik_light"
+        android:text="Editar Foto"
+        android:textColor="#13497B"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/newPsswrd"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
         android:id="@+id/birthText2"
         android:layout_width="150dp"
         android:layout_height="19dp"
@@ -236,7 +253,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="196dp"
-        android:background="@drawable/ic_avatar_svgrepo_com"
         android:contentDescription="@string/icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/oldpass"

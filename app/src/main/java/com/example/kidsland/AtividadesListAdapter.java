@@ -149,8 +149,7 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
 
 
         //SHOW PHOTO
-        String photo = items.get(position).getPhoto();
-        System.out.println(photo);
+        String photo = "http://188.82.156.135:8080/Back-end/IMAGES/" + items.get(position).getPhoto();
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)

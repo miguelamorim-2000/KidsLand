@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidsland.backend.SessionManagement;
+import com.squareup.picasso.Picasso;
 
 public class MenuActivity extends AppCompatActivity {
     private Button btnPrizes;
@@ -50,6 +52,16 @@ public class MenuActivity extends AppCompatActivity {
         //SET FIELDS WITH DATA
         TextView txt1 = (TextView)findViewById(R.id.nameTxt);
         txt1.setText(name_child);
+
+        //SHOW PHOTO
+        String photo =  "http://188.82.156.135:8080/Back-end/IMAGES/" + sessionManagement.getPhoto();
+        System.out.println(photo);
+        Picasso.get().load(photo)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.photo));
+
+
 
 
         //BUTTON LISTENERS TO REDIRECT TO PAGES
@@ -146,6 +158,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.VisualizarDadosCriancaActivity.class);
                 startActivity(intent);
+                finish();
 
 
             }

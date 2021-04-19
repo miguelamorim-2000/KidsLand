@@ -62,8 +62,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.itemView.findViewById(R.id.textTitle4345).setPadding(0,40,20,40);
         holder.itemView.findViewById(R.id.textLocation3467).setPadding(0,30,20,40);
 
-        String photo = items.get(position).getPhoto();
-        System.out.println(photo);
+        String photo = "http://188.82.156.135:8080/Back-end/IMAGES/" + items.get(position).getPhoto();
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)

@@ -7,6 +7,8 @@
     android:background="#F8FBFF"
     tools:context=".PremiosActivity">
 
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar8"
         android:layout_width="match_parent"
@@ -149,5 +151,79 @@
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:layout_constraintVertical_bias="0.285" />
+
+    <ImageView
+        android:id="@+id/level0Prize"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="248dp"
+        android:contentDescription="@string/icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <ImageView
+        android:id="@+id/level3Prize"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="124dp"
+        android:contentDescription="@string/icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/level0Prize" />
+
+    <ImageView
+        android:id="@+id/level4Prize"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="124dp"
+        android:contentDescription="@string/icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/level3Prize"
+        app:layout_constraintTop_toBottomOf="@+id/level2Prize"
+        app:layout_constraintVertical_bias="0.49" />
+
+    <ImageView
+        android:id="@+id/level1Prize"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="248dp"
+        android:visibility="invisible"
+        android:contentDescription="@string/icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/level0Prize"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.49" />
+
+    <ImageView
+        android:id="@+id/level2Prize"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="248dp"
+        android:visibility="invisible"
+        android:contentDescription="@string/icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/level1Prize"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.49" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

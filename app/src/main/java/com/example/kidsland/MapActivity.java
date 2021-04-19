@@ -92,8 +92,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     String body = response.body().string();
 
                     try {
-                        JSONObject root = new JSONObject(body);
-                        JSONArray msg = root.getJSONArray("MSG");
+                        JSONArray msg = new JSONArray(body);
+
                         for ( int i = 0; i < msg.length(); i++) {
 
                             String description;
@@ -105,8 +105,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                             MapActivity.this.runOnUiThread(() -> {
                                 map.addMarker(new MarkerOptions().position(activity).title(description));
-                                map.moveCamera(CameraUpdateFactory.newLatLng(activity));
-                                    });
+                                map.moveCamera(CameraUpdateFactory.newLatLngZoom(activity, 15.0f ));
+
+
+                            });
 
 
 
@@ -124,7 +126,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
 
 
-        map.animateCamera(CameraUpdateFactory.zoomTo( 15.0f ));
 
 
     }

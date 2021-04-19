@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidsland.backend.SessionManagement;
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
@@ -40,6 +42,47 @@ public class PremiosActivity extends AppCompatActivity {
         settings = findViewById(R.id.button19);
         points1Txt = findViewById(R.id.points1Txt);
         points1Txt2 =findViewById(R.id.points1Txt2);
+
+        //LOAD LEVEL PRIZES PHOTO
+        //MEDAL
+        String photo =  "http://188.82.156.135:8080/Back-end/IMAGES/prizeLevel0.png";
+        Picasso.get().load(photo)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.level0Prize));
+
+        //STAR
+        String photo1 =  "http://188.82.156.135:8080/Back-end/IMAGES/prizeLevel1.png";
+        Picasso.get().load(photo1)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.level1Prize));
+
+        //TROPHY
+        String photo2 =  "http://188.82.156.135:8080/Back-end/IMAGES/prizeLevel2.png";
+        Picasso.get().load(photo2)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.level2Prize));
+
+        //CROWN
+        String photo3 =  "http://188.82.156.135:8080/Back-end/IMAGES/prizeLevel3.png";
+        Picasso.get().load(photo3)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.level3Prize));
+
+        //TROPHY
+        String photo4 =  "http://188.82.156.135:8080/Back-end/IMAGES/prizeLevel4.png";
+        Picasso.get().load(photo4)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.level4Prize));
+
+
+
+
+
 
 
 
@@ -138,7 +181,42 @@ public class PremiosActivity extends AppCompatActivity {
                             //DISPLAY POINTS
                             points1Txt.setText(finalPoints + " pontos");
 
+
+                            if (points1Txt2.getText().toString().equals("0")){
+                                findViewById(R.id.level0Prize).setVisibility(View.VISIBLE);
+                                System.out.println("ola0");
+
+                            }
+                            if (points1Txt2.getText().toString().equals("1")){
+                                findViewById(R.id.level0Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level1Prize).setVisibility(View.VISIBLE);
+                                System.out.println("ola1");
+
+                            }
+                            if (points1Txt2.getText().toString().equals("2")){
+                                findViewById(R.id.level0Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level1Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level2Prize).setVisibility(View.VISIBLE);
+                            }
+                            if (points1Txt2.getText().toString().equals("3")){
+                                findViewById(R.id.level0Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level1Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level2Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level3Prize).setVisibility(View.VISIBLE);
+
+                            }
+                            if (points1Txt2.getText().toString().equals("4")){
+                                findViewById(R.id.level0Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level1Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level2Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level3Prize).setVisibility(View.VISIBLE);
+                                findViewById(R.id.level4Prize).setVisibility(View.VISIBLE);
+
+                            }
+
                         });
+
+
 
 
 
@@ -153,6 +231,7 @@ public class PremiosActivity extends AppCompatActivity {
                 }
             }
         });
+
 
 
 

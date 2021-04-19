@@ -6,12 +6,11 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.PUT;
 
-public interface JsonPlaceHolderApi {
+public interface JsonPlaceHolderApi2 {
 
 @FormUrlEncoded
-    @PUT("PasswordPut")
-    Call<ResponseBody> putPost (@Field("password") String password, @Field("email") String email);
-
+    @PUT("ChildUploadPut")
+    Call<ResponseBody> putPostPic (@Field("photo") String photo, @Field("id_child") int id_child);
 
 
 }

@@ -12,7 +12,11 @@ public class SessionManagement {
     String ID_CHILD = "id_child";
     String TOTAL_POINTS = "total_points";
     String BIRTH_DATE = "birth_date";
+    String PHOTO = "photo";
     String NAME_CHILD ="name_child";
+    String EMAILTEMPORARY ="temporary_mail";
+
+
 
 
 
@@ -28,6 +32,7 @@ public class SessionManagement {
         int total_points = child.getTotal_points();
         String birth_date = child.getBirth_date();
         String name_child = child.getName();
+        String photo = child.getPhoto();
 
         editor.putInt(SESSION_KEY, id_user).commit();
         editor.putString(EMAIL, email).commit();
@@ -35,10 +40,30 @@ public class SessionManagement {
         editor.putInt(TOTAL_POINTS, total_points).commit();
         editor.putString(BIRTH_DATE, birth_date).commit();
         editor.putString(NAME_CHILD, name_child).commit();
+        editor.putString(PHOTO, photo).commit();
+
 
 
 
     }
+    //SAVE PIC
+    public void updatePic (String photo){
+        String photo1 = photo;
+        editor.putString(PHOTO, photo1).commit();
+
+    }
+
+    public void tempEmail(String email_temp){
+        String email_temporary = email_temp;
+
+
+        editor.putString(EMAILTEMPORARY, email_temporary).commit();
+
+
+
+
+    }
+
 
     //RETURN USER ID SESSION SAVED
     public int getSession(){
@@ -66,6 +91,17 @@ public class SessionManagement {
         return sharedPreferences.getString(NAME_CHILD, "");
     }
 
+    public String getPhoto() {
+        return sharedPreferences.getString(PHOTO, "");
+    }
+
+
+    public String getEMAILTEMPORARY() {
+        return sharedPreferences.getString(EMAILTEMPORARY, "");
+    }
+
+
+
     //LOGOUT AND REMOVE SESSION
     public void removeSession(){
         editor.putInt(SESSION_KEY, -1).commit();
@@ -74,6 +110,16 @@ public class SessionManagement {
         editor.putInt(TOTAL_POINTS, -1).commit();
         editor.putString(BIRTH_DATE, "").commit();
         editor.putString(NAME_CHILD, "").commit();
+        editor.putString(PHOTO, "").commit();
+
+
+
+    }
+
+//REMOVE TEMPORARY EMAIL
+       public void removeTempMail(){
+        editor.putString(EMAILTEMPORARY, "").commit();
+
 
 
     }

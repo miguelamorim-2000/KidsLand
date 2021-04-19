@@ -25,7 +25,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity {
     private Button botaoLogin;
-    private TextView createAccBtn;
+    private TextView createAccBtn, forgotPw;
     EditText email, password;
     Button submitbutton;
     String e, p;
@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         createAccBtn = (TextView) findViewById(R.id.createAccBtn);
         email = (EditText)findViewById(R.id.emailTxtLogin);
         password = (EditText) findViewById(R.id.passwordTxtLogin);
+        forgotPw = (TextView) findViewById(R.id.forgotPassword);
+
 
         //SEE IF SESSION IS RUNNING ON START;
        SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
@@ -76,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                         System.out.println(response);
 
                         //INICIALIZE VARIABLES
-                        String status = "", email_user = "", birth_date ="", name_child="";
+                        String status = "", email_user = "", birth_date ="", name_child="", photo ="";
                         int id_user = 0, id_child = 0, total_points=0;
 
                         //GET STATUS OF OPERATION
@@ -95,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                                 total_points =response.getInt("total_points");
                                 birth_date =response.getString("birth_date");
                                 name_child =response.getString("name");
+                                photo = response.getString("photo");
 
 
                             } catch (JSONException jsonException) {
@@ -103,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             //CREATE SESSION
                             User user = new User(email_user, id_user);
-                            Child child = new Child(name_child, total_points, birth_date, id_child);
+                            Child child = new Child(name_child, total_points, birth_date, id_child, photo);
                             SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
                             sessionManagement.saveSession(user, child);
                             Toast.makeText(LoginActivity.this, "Login com sucesso!", Toast.LENGTH_SHORT).show();
@@ -139,6 +142,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+       //Create account button
         createAccBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,5 +154,17 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
+
+        //Forgot Password Button
+        forgotPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( LoginActivity.this, com.example.kidsland.RequestPasswordActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
+
     }
 }

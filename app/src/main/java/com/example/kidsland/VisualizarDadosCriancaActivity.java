@@ -1,16 +1,21 @@
 package com.example.kidsland;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidsland.backend.JsonPlaceHolderApi;
 import com.example.kidsland.backend.SessionManagement;
+import com.squareup.picasso.Picasso;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -27,6 +32,7 @@ public class VisualizarDadosCriancaActivity extends AppCompatActivity {
     String email;
     EditText oldpass, newpass, newpassconf;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
+    TextView editPhoto;
 
 
     @Override
@@ -39,6 +45,7 @@ public class VisualizarDadosCriancaActivity extends AppCompatActivity {
         oldpass = findViewById(R.id.oldpass);
         newpass = findViewById(R.id.passwordconf);
         newpassconf = findViewById(R.id.passwordconf2);
+        editPhoto = findViewById(R.id.editPhoto);
 
 
 
@@ -68,6 +75,28 @@ public class VisualizarDadosCriancaActivity extends AppCompatActivity {
         birth.setPressed(false);
         birth.setFocusable(false);
 
+        //Underline
+        editPhoto.setPaintFlags(editPhoto.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        //OnClick to edit photo
+        editPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( VisualizarDadosCriancaActivity.this, com.example.kidsland.EditProfilePicActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+
+        //SHOW PHOTO
+        String photo =  "http://188.82.156.135:8080/Back-end/IMAGES/" + sessionManagement.getPhoto();
+        System.out.println(photo);
+        Picasso.get().load(photo)
+                .placeholder(R.drawable.loadingicon)
+                .error(R.drawable.loadingicon)
+                .into((ImageView) findViewById(R.id.imageView13));
 
 //SAVE DATA
         findViewById(R.id.buttonApply).setOnClickListener(new View.OnClickListener() {
@@ -96,12 +125,16 @@ public class VisualizarDadosCriancaActivity extends AppCompatActivity {
         findViewById(R.id.exitprofile).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent( VisualizarDadosCriancaActivity.this, com.example.kidsland.MenuActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
 
 
 
+//PUT DEFINITIONS
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://188.82.156.135:8080/Back-end/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -127,7 +160,9 @@ call.enqueue(new Callback<ResponseBody>() {
 
         } else {
             Toast.makeText(VisualizarDadosCriancaActivity.this, "Password alterada com sucesso!", Toast.LENGTH_SHORT).show();
-
+            Intent intent = new Intent( VisualizarDadosCriancaActivity.this, com.example.kidsland.MenuActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 

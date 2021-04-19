@@ -75,8 +75,10 @@ public class FactosActivity extends AppCompatActivity {
                     String body = response.body().string();
 
                     try {
-                        JSONObject root = new JSONObject(body);
-                        JSONArray msg = root.getJSONArray("MSG");
+                    /*    JSONObject root = new JSONObject(body);
+                        JSONArray msg = root.getJSONArray("MSG");*/
+
+                        JSONArray msg = new JSONArray(body);
                         for ( int i = 0; i < msg.length(); i++) {
                             JSONObject jsonItem = msg.getJSONObject(i);
 
