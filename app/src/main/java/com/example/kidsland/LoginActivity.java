@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 params.put("email", e);
                 params.put("password", p);
                 client = new AsyncHttpClient();
+                System.out.println("ola");
                 client.post(URL, params, new JsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
