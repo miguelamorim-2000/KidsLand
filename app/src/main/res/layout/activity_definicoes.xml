@@ -7,6 +7,7 @@
     android:background="#F8FBFF"
     tools:context=".DefinicoesActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar5"
         android:layout_width="match_parent"
@@ -206,4 +207,17 @@
         app:layout_constraintStart_toStartOf="@+id/locationBtn"
         app:layout_constraintTop_toTopOf="@+id/locationBtn"
         app:layout_constraintVertical_bias="0.482" />
+
+    <Button
+        android:id="@+id/faqButton5"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/ic_baseline_help_24"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

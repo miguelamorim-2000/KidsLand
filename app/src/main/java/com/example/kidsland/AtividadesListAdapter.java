@@ -108,24 +108,34 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
                     try {
                         JSONObject root = new JSONObject(body);
                         for ( int i = 0; i < root.length(); i++) {
+                            String status = "";
                             System.out.println(id_childPost);
                             System.out.println(id_activity);
                             System.out.println(body);
-                            statusCode= root.getString("STATUS");
+                            status= root.getString("STATUS");
 
-                            }
+                            String finalStatus = status;
+                            ((AppCompatActivity) context).runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
 
-                        ((AppCompatActivity) context).runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
 
-                                // SET BUTTON TO SUBSCRIPTED ACTIVITY
-                                if(statusCode.equals("200")){
-                                    holder.participateBtn2.setVisibility(View.VISIBLE);
 
+                                    // SET BUTTON TO SUBSCRIPTED ACTIVITY
+                                    if(finalStatus.equals("200")){
+
+                                        holder.participateBtn.setVisibility(View.INVISIBLE);
+                                        holder.participateBtn2.setVisibility(View.VISIBLE);
+
+                                    }
                                 }
+                            });
+
+
+
                             }
-                        });
+
+
 
 
 
@@ -185,25 +195,45 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
                         } catch (JSONException jsonException) {
                             jsonException.printStackTrace();
                         }
-                        if (status.equals("200")){
-                            Toast.makeText(v.getContext(), "Inscrito com sucesso!", Toast.LENGTH_SHORT).show();
+                        String finalStatus = status;
+                        System.out.println("---------");
+                        System.out.println(finalStatus);
 
-                            //SET COLOR
-                            holder.participateBtn2.setVisibility(View.VISIBLE);
+                        System.out.println(finalStatus.equals("200"));
 
+                        System.out.println("---------");
 
-
-
-
-                        }
-
-                        if (status.equals("400")){
-                            Toast.makeText(v.getContext(), "Já se encontra inscrito!", Toast.LENGTH_SHORT).show();
+                        ((AppCompatActivity) context).runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
 
 
 
+                                // SET BUTTON TO SUBSCRIPTED ACTIVITY
+                                if(finalStatus.equals("200")){
 
-                        }
+                                    holder.participateBtn.setVisibility(View.INVISIBLE);
+                                    holder.participateBtn2.setVisibility(View.VISIBLE);
+                                    Toast.makeText(v.getContext(), "Inscrito com sucesso!", Toast.LENGTH_SHORT).show();
+
+                                }
+
+                                if (finalStatus.equals("400")){
+                                    Toast.makeText(v.getContext(), "Já se encontra inscrito!", Toast.LENGTH_SHORT).show();
+
+
+
+
+                                }
+                            }
+                        });
+
+
+
+
+
+
+
 
                     }
 
@@ -262,31 +292,35 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
                             try {
                                 JSONObject root = new JSONObject(body);
                                 for ( int i = 0; i < root.length(); i++) {
+                                    String status = "";
                                     System.out.println(id_childPost);
                                     System.out.println(id_activity);
                                     System.out.println(body);
-                                    statusCode= root.getString("STATUS");
+                                    status= root.getString("STATUS");
+
+
+                                    String finalStatus = status;
+
+
+                                    ((AppCompatActivity) context).runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+
+
+
+                                            // SET BUTTON TO SUBSCRIPTED ACTIVITY
+                                            if(finalStatus.equals("200")){
+
+                                                holder.participateBtn.setVisibility(View.VISIBLE);
+                                                holder.participateBtn2.setVisibility(View.INVISIBLE);
+
+                                            }
+                                        }
+                                    });
+
 
                                 }
 
-                                ((AppCompatActivity) context).runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-
-                                        // SET BUTTON TO SUBSCRIPTED ACTIVITY
-                                        if(statusCode.equals("200")){
-                                            holder.participateBtn2.setVisibility(View.INVISIBLE);
-                                            holder.participateBtn.setVisibility(View.VISIBLE);
-                                            Toast.makeText(v.getContext(), "Inscrição cancelada com sucesso!", Toast.LENGTH_SHORT).show();
-
-
-
-                                        } else {
-                                            Toast.makeText(v.getContext(), "Ocorreu um erro ao cancelar atividade", Toast.LENGTH_SHORT).show();
-
-                                        }
-                                    }
-                                });
 
 
 
@@ -332,7 +366,7 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
             activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo89);
             recyclerView = itemView.findViewById(R.id.recycler_view54665);
             participateBtn = itemView.findViewById(R.id.participatebtn98);
-            participateBtn2 = itemView.findViewById(R.id.participatebtn276);
+            participateBtn2 = itemView.findViewById(R.id.participatebtn2090);
             timeActivity = itemView.findViewById(R.id.timeActivity676);
 
 
