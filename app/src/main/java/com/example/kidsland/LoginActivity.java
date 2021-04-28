@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
     private BiometricPrompt biometricPrompt;
     private BiometricPrompt.PromptInfo promptInfo;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        //SEE IF SESSION IS RUNNING ON START;
+        //SEE IF SESSION IS RUNNING ON START
        SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
        int userID = sessionManagement.getSession();
 
