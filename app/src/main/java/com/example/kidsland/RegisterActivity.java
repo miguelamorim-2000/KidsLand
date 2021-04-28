@@ -125,52 +125,60 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                             } else {
-                                client.post(URL, params, new JsonHttpResponseHandler() {
-                                    @Override
-                                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                                        super.onSuccess(statusCode, headers, response);
-                                        System.out.println(response.toString());
+                                if (password.getText().length() < 8) {
+                                    Toast.makeText(RegisterActivity.this, "A password tem de ter no minimo 8 digitos", Toast.LENGTH_SHORT).show();
 
-                                        String status = "";
 
-                                        //GET STATUS OF OPERATION
-                                        try {
-                                            status = response.getString("STATUS");
-                                        } catch (JSONException jsonException) {
-                                            jsonException.printStackTrace();
+
+                                } else {
+
+                                    client.post(URL, params, new JsonHttpResponseHandler() {
+                                        @Override
+                                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                            super.onSuccess(statusCode, headers, response);
+                                            System.out.println(response.toString());
+
+                                            String status = "";
+
+                                            //GET STATUS OF OPERATION
+                                            try {
+                                                status = response.getString("STATUS");
+                                            } catch (JSONException jsonException) {
+                                                jsonException.printStackTrace();
+                                            }
+                                            if (status.equals("200")) {
+                                                Toast.makeText(RegisterActivity.this, "Registado com sucesso!", Toast.LENGTH_SHORT).show();
+                                                email.setText("");
+                                                password.setText("");
+                                                passwordConfirm.setText("");
+                                                telephone.setText("");
+                                                nameTxtRegister.setText("");
+
+                                            }
+
+                                            if (status.equals("400")) {
+                                                Toast.makeText(RegisterActivity.this, "Erro no Registo.", Toast.LENGTH_SHORT).show();
+
+                                            }
+
+                                            if (status.equals("401")) {
+                                                Toast.makeText(RegisterActivity.this, "Utilizador já registado!", Toast.LENGTH_SHORT).show();
+
+                                            }
                                         }
-                                        if (status.equals("200")) {
-                                            Toast.makeText(RegisterActivity.this, "Registado com sucesso!" , Toast.LENGTH_SHORT).show();
-                                            email.setText("");
-                                            password.setText("");
-                                            passwordConfirm.setText("");
-                                            telephone.setText("");
-                                            nameTxtRegister.setText("");
 
+                                        @Override
+                                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                                            super.onFailure(statusCode, headers, responseString, throwable);
+                                            Toast.makeText(RegisterActivity.this, "Falha no registo!", Toast.LENGTH_SHORT).show();
+                                            System.out.println(responseString);
                                         }
 
-                                        if (status.equals("400")){
-                                            Toast.makeText(RegisterActivity.this, "Erro no Registo.", Toast.LENGTH_SHORT).show();
+                                    });
 
-                                        }
-
-                                        if (status.equals("401")){
-                                            Toast.makeText(RegisterActivity.this, "Utilizador já registado!", Toast.LENGTH_SHORT).show();
-
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                                        super.onFailure(statusCode, headers, responseString, throwable);
-                                        Toast.makeText(RegisterActivity.this, "Falha no registo!", Toast.LENGTH_SHORT).show();
-                                        System.out.println(responseString);
-                                    }
-
-                                });
+                                }
 
                             }
-
                         }
                     }
 

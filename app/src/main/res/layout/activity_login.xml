@@ -27,6 +27,7 @@
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
@@ -52,24 +53,26 @@
 
     <TextView
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="372dp"
-        android:layout_height="42dp"
-        android:layout_marginLeft="18dp"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:background="@null"
         android:ems="10"
         android:fontFamily="@font/rancho"
         android:inputType="textPersonName"
-        android:text="Inicia Sessão para começar a diversão!"
+        android:text="Inicia Sessão para te divertires!"
         android:textColor="#143656"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.07999998" />
+        app:layout_constraintVertical_bias="0.085" />
 
     <EditText
         android:id="@+id/emailTxtLogin"
@@ -202,6 +205,16 @@
         app:srcCompat="@drawable/ic_baseline_error_24"
         android:visibility="invisible"
         tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/touch" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

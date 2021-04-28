@@ -105,7 +105,6 @@ public class SessionManagement {
     //LOGOUT AND REMOVE SESSION
     public void removeSession(){
         editor.putInt(SESSION_KEY, -1).commit();
-        editor.putString(EMAIL, "").commit();
         editor.putInt(ID_CHILD, -1).commit();
         editor.putInt(TOTAL_POINTS, -1).commit();
         editor.putString(BIRTH_DATE, "").commit();

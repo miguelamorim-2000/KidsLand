@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#F8FBFF"
     app:cardBackgroundColor="#F8FBFF"
     tools:context=".AtividadesList"
@@ -12,11 +12,11 @@
 
     <Button
         android:id="@+id/button14"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="13dp"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="13sp"
         android:background="@drawable/ic_back"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -29,7 +29,7 @@
         android:id="@+id/toolbar6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="37sp"
         android:background="#46D0D9"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -40,13 +40,13 @@
 
     <Button
         android:id="@+id/defitionsButton456"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="348dp"
-        android:layout_marginLeft="348dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:layout_marginStart="348sp"
+        android:layout_marginLeft="348sp"
+        android:layout_marginTop="13sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginRight="10sp"
         android:background="@drawable/ic_baseline_settings_24"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar9"
@@ -57,12 +57,12 @@
 
     <TextView
         android:id="@+id/titulofactos"
-        android:layout_width="304dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginBottom="583dp"
+        android:layout_width="276sp"
+        android:layout_height="43sp"
+        android:layout_marginStart="90sp"
+        android:layout_marginLeft="90sp"
+        android:layout_marginTop="117sp"
+        android:layout_marginBottom="583sp"
         android:fontFamily="@font/rubik_light"
         android:lineSpacingExtra="30.81sp"
         android:text="SOBRE A TUA CIDADE"
@@ -72,11 +72,11 @@
 
     <ImageView
         android:id="@+id/imageView56"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="100sp"
         app:srcCompat="@drawable/ic_buildings"
         tools:ignore="VectorDrawableCompat" />
 
@@ -85,7 +85,7 @@
         android:id="@+id/containerActivity232"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="200sp"
         android:background="#F8FBFF"
         android:orientation="vertical">
 
@@ -95,45 +95,12 @@
             android:layout_height="wrap_content"
             android:background="#F8FBFF">
 
-            <ImageView
-                android:id="@+id/imageView832"
-                android:layout_width="386dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="7dp"
-                android:padding="10dp"
-                app:srcCompat="@drawable/rectangle22" />
 
-            <TextView
-                android:id="@+id/textTitle4345"
-                android:layout_width="293dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/rubik"
-                android:paddingTop="10dp"
-                android:textColor="#143656"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textLocation3467"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView77"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="30dp"
-                android:textColor="#143656"
-                android:textSize="14dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_viewFacts"
                 android:layout_width="match_parent"
-                android:layout_height="606dp"
+                android:layout_height="606sp"
 
         />
 
