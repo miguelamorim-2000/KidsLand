@@ -59,7 +59,7 @@ public class EvaluationActivity extends AppCompatActivity {
 
         listItems = new ArrayList<>();
         //Create Recycler View
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view43);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view433);
 
 
         mRecyclerView.setHasFixedSize(true);

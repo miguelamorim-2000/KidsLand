@@ -366,7 +366,7 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
             activityLogo = (ImageView) itemView.findViewById(R.id.activityLogo89);
             recyclerView = itemView.findViewById(R.id.recycler_view54665);
             participateBtn = itemView.findViewById(R.id.participatebtn98);
-            participateBtn2 = itemView.findViewById(R.id.participatebtn2090);
+            participateBtn2 = itemView.findViewById(R.id.participatebtn276);
             timeActivity = itemView.findViewById(R.id.timeActivity676);
 
 

@@ -48,7 +48,7 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
     }
     @Override
     public AvaliacaoAtividadeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowavaliacao, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowevaluation1, parent, false);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         return new AvaliacaoAtividadeAdapter.ViewHolder(view);
@@ -62,7 +62,6 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
     holder.textTitle434345.setText(items.get(position).getTittle());
         holder.textLocation3464547.setText(items.get(position).getLocation());
         holder.timeActivity656576.setText(items.get(position).getTime());
-        id_activity = items.get(position).getId_item();
 
 
 
@@ -74,17 +73,9 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)
-                .into((ImageView) holder.itemView.findViewById(R.id.activityLogo865659));
+                .into((ImageView) holder.itemView.findViewById(R.id.activityLogo2));
 
-        holder.participatebtn275656.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("-------------");
-                System.out.println(id_activity);
-                System.out.println("-------------");
 
-            }
-        });
     }
 
     @Override
@@ -104,11 +95,10 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
 
         public ViewHolder (View itemView){
             super (itemView);
-            textTitle434345 = itemView.findViewById(R.id.textTitle434345);
-            textLocation3464547= itemView.findViewById(R.id.textLocation3464547);
-            activityLogo865659 = itemView.findViewById(R.id.activityLogo865659);
-            timeActivity656576 = itemView.findViewById(R.id.timeActivity656576);
-            participatebtn275656 = itemView.findViewById(R.id.participatebtn65698);
+            textTitle434345 = itemView.findViewById(R.id.textTitleEvaluation);
+            textLocation3464547= itemView.findViewById(R.id.textLocation3467);
+            activityLogo865659 = itemView.findViewById(R.id.activityLogo2);
+            timeActivity656576 = itemView.findViewById(R.id.timeActivity2);
 
 
 

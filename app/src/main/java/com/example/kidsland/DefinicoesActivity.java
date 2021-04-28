@@ -67,7 +67,7 @@ public class DefinicoesActivity extends AppCompatActivity {
        camaraAccess= findViewById(R.id.camaraAccess);
        locationBtn = findViewById(R.id.locationBtn);
        storageBtn = findViewById(R.id.storageBtn);
-       faqBtn = findViewById(R.id.faqButton5);
+      // faqBtn = findViewById(R.id.faqButton5);
        manifestCam = Manifest.permission.CAMERA;
         logoutBtn = findViewById(R.id.logoutBtn);
         backBtnDefinitions= findViewById(R.id.backBtnDefinitions);
