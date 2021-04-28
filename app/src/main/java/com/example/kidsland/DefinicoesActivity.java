@@ -45,7 +45,7 @@ public class DefinicoesActivity extends AppCompatActivity {
     private TextView camaraAccess;
     private TextView storageBtn;
     private TextView locationBtn;
-    private Button logoutBtn,backBtnDefinitions;
+    private Button logoutBtn,backBtnDefinitions, faqBtn;
     private String manifestCam;
     private JsonPlaceHolderApi3 jsonPlaceHolderApi;
     private Switch switch1;
@@ -67,6 +67,7 @@ public class DefinicoesActivity extends AppCompatActivity {
        camaraAccess= findViewById(R.id.camaraAccess);
        locationBtn = findViewById(R.id.locationBtn);
        storageBtn = findViewById(R.id.storageBtn);
+       faqBtn = findViewById(R.id.faqButton5);
        manifestCam = Manifest.permission.CAMERA;
         logoutBtn = findViewById(R.id.logoutBtn);
         backBtnDefinitions= findViewById(R.id.backBtnDefinitions);
@@ -288,6 +289,16 @@ public class DefinicoesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+
+            }
+        });
+
+        faqBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( DefinicoesActivity.this, com.example.kidsland.FAQActivity.class);
+                startActivity(intent);
 
             }
         });

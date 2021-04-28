@@ -46,4 +46,28 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_main3">MainActivity3</string>
     <string name="title_activity_request_password">RequestPasswordActivity</string>
+    <string name="group1">Pergunta1</string>
+    <string name="group2">Group2</string>
+    <string name="group3">Group3</string>
+    <string name="group4">Group4</string>
+    <string name="group5">Group5</string>
+    <string-array name="group1">
+        <item>item 1</item>
+    </string-array>
+    <string-array name="group2">
+        <item>item 1</item>
+    </string-array>
+
+    <string-array name="group3">
+        <item>item 1</item>
+    </string-array>
+    <string-array name="group4">
+        <item>item 1</item>
+    </string-array>
+    <string-array name="group5">
+        <item>item 1</item>
+    </string-array>
+
+
+
 </resources>

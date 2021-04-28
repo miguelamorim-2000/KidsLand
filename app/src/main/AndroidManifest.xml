@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KidsLand"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditProfilePicActivity"></activity>
+        <activity android:name=".FAQActivity"></activity>
+        <activity android:name=".EditProfilePicActivity" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".InsertTemporaryPW" />
         <activity android:name=".RequestPasswordActivity" />
