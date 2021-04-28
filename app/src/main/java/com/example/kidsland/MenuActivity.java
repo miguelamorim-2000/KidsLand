@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 public class MenuActivity extends AppCompatActivity {
     private Button btnPrizes;
-    private Button btnFacts;
+    private Button btnFacts, botao;
     private Button btnActivities;
     private Button btnHistoric;
     private Button btnSuggestions;
@@ -38,6 +38,7 @@ public class MenuActivity extends AppCompatActivity {
         btnSuggestions = (Button) findViewById(R.id.sugestionsButton);
         gameEvaButton = (Button) findViewById(R.id.gameEvaButton);
         profileButton = (Button) findViewById(R.id.profileButton);
+        botao = (Button) findViewById(R.id.button12323);
 
 
 
@@ -157,6 +158,18 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( MenuActivity.this, com.example.kidsland.VisualizarDadosCriancaActivity.class);
+                startActivity(intent);
+                finish();
+
+
+            }
+
+        });
+
+        botao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.FAQActivity.class);
                 startActivity(intent);
                 finish();
 

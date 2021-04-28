@@ -46,13 +46,14 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_main3">MainActivity3</string>
     <string name="title_activity_request_password">RequestPasswordActivity</string>
-    <string name="group1">Pergunta1</string>
-    <string name="group2">Group2</string>
-    <string name="group3">Group3</string>
-    <string name="group4">Group4</string>
-    <string name="group5">Group5</string>
+    <string name="group1">Como me posso registir numa Atividade?</string>
+    <string name="group2">Que idade preciso de ter para participar numa Atividade?</string>
+    <string name="group3">Em que sítio são as atividades?</string>
+    <string name="group4">Quantos pontos necessito para passar de nível?</string>
+    <string name="group5">Quem é que organiza as atividades</string>
     <string-array name="group1">
-        <item>item 1</item>
+        <item>Para te registares numa atividade, deves ir à página "Atividades" e clicar em "Participar" na Atividade que queres participar!
+            Para Cancelar, basta clicares de novo em cima de "Inscrito".</item>
     </string-array>
     <string-array name="group2">
         <item>item 1</item>
