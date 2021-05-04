@@ -293,15 +293,7 @@ public class DefinicoesActivity extends AppCompatActivity {
             }
         });
 
-        faqBtn.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( DefinicoesActivity.this, com.example.kidsland.FAQActivity.class);
-                startActivity(intent);
-
-            }
-        });
 
     }
 

@@ -38,7 +38,6 @@ public class MenuActivity extends AppCompatActivity {
         btnSuggestions = (Button) findViewById(R.id.sugestionsButton);
         gameEvaButton = (Button) findViewById(R.id.gameEvaButton);
         profileButton = (Button) findViewById(R.id.profileButton);
-        botao = (Button) findViewById(R.id.button12323);
 
 
 
@@ -166,16 +165,6 @@ public class MenuActivity extends AppCompatActivity {
 
         });
 
-        botao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.FAQActivity.class);
-                startActivity(intent);
-                finish();
 
-
-            }
-
-        });
     }
 }
