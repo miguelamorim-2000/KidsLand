@@ -68,8 +68,7 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
 
 
         //SHOW PHOTO
-        String photo = items.get(position).getPhoto();
-        System.out.println(items.get(position).getPhoto());
+        String photo = "http://188.82.156.135:8080/Back-end/IMAGES/" + items.get(position).getPhoto();
         Picasso.get().load(photo)
                 .placeholder(R.drawable.loadingicon)
                 .error(R.drawable.loadingicon)

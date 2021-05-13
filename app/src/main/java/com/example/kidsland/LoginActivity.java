@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                                               @NonNull CharSequence errString) {
                 super.onAuthenticationError(errorCode, errString);
                 Toast.makeText(getApplicationContext(),
-                        "Authentication error: " + errString, Toast.LENGTH_SHORT)
+                        "Erro de Autenticação: " + errString, Toast.LENGTH_SHORT)
                         .show();
 
 
