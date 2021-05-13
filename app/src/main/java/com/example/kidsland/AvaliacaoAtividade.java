@@ -57,7 +57,7 @@ public class AvaliacaoAtividade extends AppCompatActivity {
 
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
+        mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
 
 
 

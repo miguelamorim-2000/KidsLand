@@ -69,6 +69,8 @@
         android:textSize="26sp"
         android:textStyle="bold" />
 
+
+
     <TextView
         android:id="@+id/textView11231344"
         android:layout_width="203dp"
@@ -113,11 +115,26 @@
                 android:id="@+id/recycler_view54623165"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:layout_marginTop="60sp" />
 
 
         </RelativeLayout>
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="164dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="120sp"
+        android:layout_marginLeft="120sp"
+        android:layout_marginTop="527dp"
+        android:layout_marginBottom="583dp"
+        android:fontFamily="@font/rubik_light"
+        android:lineSpacingExtra="30.81sp"
+        android:text="Desliza para a direita ->"
+        android:textColor="#143656"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </androidx.cardview.widget.CardView>

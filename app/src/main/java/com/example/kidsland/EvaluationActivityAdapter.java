@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.example.kidsland.backend.JsonPlaceHolderApi4;
 import com.example.kidsland.backend.ListItem;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
@@ -35,6 +36,8 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationActivityAdapter.ViewHolder> {
 
@@ -49,6 +52,8 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
     int id_request;
     String status_evaluation = "";
     float points = 0;
+    private JsonPlaceHolderApi4 jsonPlaceHolderApi;
+
 
 
 
@@ -71,6 +76,8 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
 
 
+
+
     }
 
     @Override
@@ -83,6 +90,15 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
         id_request = items.get(position).getId_item();
         System.out.println("id"+id_request);
+
+
+        //PUT DEFINITIONS
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://188.82.156.135:8080/Back-end/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi4.class);
 
 
 
@@ -176,112 +192,13 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
 
             }
         });
-/*
+
         //EVALUATING A ACTIVITY REQUEST
-        rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        holder.rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
 
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
-
-                if ( status_evaluation.equals("200")) {
-
-                  /*  @PUT("posts/{id}")
-                            CALL <Post> putPost(@Path("id") int id, @Body Post post)*/
-  /*                  //FETCH UPDATE
-                    params = new RequestParams();
-                    params.put("id_child", id_childPost);
-                    params.put("id_request", id_request);
-                    params.put("points", rating);
-
-
-                    client = new AsyncHttpClient();
-                    client.put("http://188.82.156.135:8080/Back-end/EvaluationRequestPut", params, new JsonHttpResponseHandler() {
-
-                        @Override
-                        public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                            super.onSuccess(statusCode, headers, response);
-                            System.out.println(response);
-
-                            //INICIALIZE VARIABLES
-                            String status = "";
-
-                            //GET STATUS OF OPERATION
-                            try {
-                                status = response.getString("STATUS");
-                            } catch (JSONException jsonException) {
-                                jsonException.printStackTrace();
-                            }
-                            if (status.equals("200")) {
-                                System.out.println("Reavaliado com sucesso");
-
-
-                            }
-
-                            if (status.equals("400")) {
-
-
-                            }
-
-                        }
-
-                        @Override
-                        public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                            super.onFailure(statusCode, headers, throwable, errorResponse);
-                            System.out.println(errorResponse);
-                        }
-
-                    });
-
-
-
-
-                } else {
-                    //FETCH POST
-                    params = new RequestParams();
-                    params.put("id_child", id_childPost);
-                    params.put("id_request", id_request);
-                    params.put("points", rating);
-
-                    client = new AsyncHttpClient();
-                    client.post(URL, params, new JsonHttpResponseHandler() {
-                        @Override
-                        public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                            super.onSuccess(statusCode, headers, response);
-                            System.out.println(response);
-
-                            //INICIALIZE VARIABLES
-                            String status = "";
-
-                            //GET STATUS OF OPERATION
-                            try {
-                                status = response.getString("STATUS");
-                            } catch (JSONException jsonException) {
-                                jsonException.printStackTrace();
-                            }
-                            if (status.equals("200")) {
-                                System.out.println("Avaliado com sucesso");
-
-
-                            }
-
-                            if (status.equals("400")) {
-
-
-                            }
-
-                        }
-
-                        @Override
-                        public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                            super.onFailure(statusCode, headers, throwable, errorResponse);
-                            System.out.println(errorResponse);
-                        }
-
-                    });
-
-                }
-
 
 
 
@@ -292,7 +209,7 @@ public class EvaluationActivityAdapter extends RecyclerView.Adapter<EvaluationAc
             }
         });
 
-*/
+
 
 
 
