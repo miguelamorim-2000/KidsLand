@@ -211,4 +211,15 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="1.0" />
 
+    <ImageView
+        android:id="@+id/doubtsIcon"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_help_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

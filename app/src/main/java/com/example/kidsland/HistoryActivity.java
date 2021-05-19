@@ -99,7 +99,7 @@ public class HistoryActivity extends AppCompatActivity {
 
 
                             historyItems.add(new HistoryItem(jsonItem.getString("description"), jsonItem.getString("address") + " , " + jsonItem.getString("county") +
-                                    " , " + jsonItem.getString("district"), jsonItem.getString("photo"), jsonItem.getString("date"), jsonItem.getInt("points")));
+                                    " , " + jsonItem.getString("district"), jsonItem.getString("photo"), jsonItem.getString("date"), jsonItem.getInt("points"), jsonItem.getInt("points_evaluation"), jsonItem.getInt("id_activity")));
 
 
                         }
@@ -108,7 +108,7 @@ public class HistoryActivity extends AppCompatActivity {
 
 
                             //Create Recycler View
-                            mAdapter = new HistoryListAdapter(historyItems);
+                            mAdapter = new HistoryListAdapter(historyItems, id_child);
                             mRecyclerView.setLayoutManager(mLayoutManager);
 
                             //CREATE ADAPTER

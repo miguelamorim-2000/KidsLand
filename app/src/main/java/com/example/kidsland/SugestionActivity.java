@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidsland.backend.SessionManagement;
@@ -19,9 +22,13 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 import cz.msebera.android.httpclient.Header;
 
 public class SugestionActivity extends AppCompatActivity {
+    private static final int REQUEST_CODE_SPEECH_INPUT = 1000 ;
     Button backBtnSugestions, settingBtnSugestions, submitSugestion;
     EditText subjectTxt, descriptionSugestion;
     String t, d;
@@ -30,6 +37,7 @@ public class SugestionActivity extends AppCompatActivity {
     RequestParams params;
     AsyncHttpClient client;
     String URL ="http://188.82.156.135:8080/Back-end/SugestionPost";
+    ImageView micIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +57,7 @@ public class SugestionActivity extends AppCompatActivity {
         submitSugestion = findViewById(R.id.sendSugestionBtn);
         subjectTxt = findViewById(R.id.subjectTxt);
         descriptionSugestion = findViewById(R.id.descriptionSugestion);
+        micIcon = findViewById(R.id.micIcon);
 
 
         //MOVE TO LOGIN PAGE
@@ -130,5 +139,46 @@ public class SugestionActivity extends AppCompatActivity {
 
             }
         });
+
+        micIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speak();
+            }
+        });
+
+
+    }
+
+    private void speak() {
+        Intent intent = new Intent (RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Podes falar!");
+
+        try{
+            startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT);
+
+        } catch (Exception e){
+            Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch(requestCode){
+            case REQUEST_CODE_SPEECH_INPUT:{
+                if (resultCode == RESULT_OK && null !=data){
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    descriptionSugestion.setText(result.get(0));
+                }
+                break;
+            }
+        }
     }
 }

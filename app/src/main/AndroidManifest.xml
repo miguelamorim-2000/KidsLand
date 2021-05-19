@@ -24,8 +24,6 @@
         <activity android:name=".InsertTemporaryPW" />
         <activity android:name=".RequestPasswordActivity" />
         <activity android:name=".AvaliacaoAtividade" />
-        <activity android:name=".Evaluation2Activity" />
-        <activity android:name=".EvaluationActivity" />
         <activity android:name=".HistoryActivity" />
 
         <meta-data

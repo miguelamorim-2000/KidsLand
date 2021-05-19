@@ -46,27 +46,35 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_main3">MainActivity3</string>
     <string name="title_activity_request_password">RequestPasswordActivity</string>
-    <string name="group1">Como me posso registir numa Atividade?</string>
+    <string name="group1">Como me posso registar numa Atividade?</string>
     <string name="group2">Que idade preciso de ter para participar numa Atividade?</string>
     <string name="group3">Em que sítio são as atividades?</string>
     <string name="group4">Quantos pontos necessito para passar de nível?</string>
-    <string name="group5">Quem é que organiza as atividades</string>
+    <string name="group5">Quem é que organiza as atividades?</string>
+    <string name="group6">Vão mais crianças participar nas atividades?</string>
+
     <string-array name="group1">
         <item>Para te registares numa atividade, deves ir à página "Atividades" e clicar em "Participar" na Atividade que queres participar!
             Para Cancelar, basta clicares de novo em cima de "Inscrito".</item>
     </string-array>
     <string-array name="group2">
-        <item>item 1</item>
+        <item>Não existe uma idade minima para participar nas nossas atividades! As nossas atividades são divertidas para todas as idades,
+            e de certeza que vais gostar!</item>
     </string-array>
 
     <string-array name="group3">
-        <item>item 1</item>
+        <item>A localização de cada atividade encontra-se na informação das atividades. Poderás também ir à pagina "Mapa", e ver onde ficam as atividades!</item>
     </string-array>
     <string-array name="group4">
-        <item>item 1</item>
+        <item>O número de pontos necessários para passar de nível depende da quantidade de atividades que realizares! Por isso, faz muitas atividades
+        e vais ver que vais aumentar de nível! </item>
     </string-array>
     <string-array name="group5">
-        <item>item 1</item>
+        <item>As atividades que encontras no separador Atividades, são preparadas por Instituições que selecionamos cuidadosamente!  </item>
+    </string-array>
+
+    <string-array name="group6">
+        <item>Depende de quantas crianças se inscreverem na atividade. Chama os teus amigos para participar também, e diverte-te! </item>
     </string-array>
 
 

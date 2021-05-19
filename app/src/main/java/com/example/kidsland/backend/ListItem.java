@@ -6,14 +6,16 @@ public class ListItem  {
     private String location;
     private String photo;
     private int id_item;
-    private String time;
+    private String time, date;
 
-    public ListItem(String tittle, String location, String photo, int id_item, String time) {
+
+    public ListItem(String tittle, String location, String photo, int id_item, String time, String date) {
         this.tittle = tittle;
         this.location = location;
         this.photo = photo;
         this.id_item = id_item;
         this.time = time;
+        this.date = date;
     }
 
     public String getTittle() {
@@ -54,6 +56,14 @@ public class ListItem  {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
 

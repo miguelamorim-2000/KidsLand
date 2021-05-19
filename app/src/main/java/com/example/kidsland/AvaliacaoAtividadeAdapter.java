@@ -11,7 +11,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.request.RequestOptions;
@@ -47,13 +46,11 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
     AsyncHttpClient client;
     AsyncHttpClient client1;
     AsyncHttpClient client2;
-    String URL ="http://188.82.156.135:8080/Back-end/SubscriptionPost";
-    String URL2 ="http://188.82.156.135:8080/Back-end/SubscriptionDelete";
+    String URL ="http://188.82.156.135:8080/Back-end/evaluation_requestPost";
     int id_childPost;
     int id_request;
     RequestParams params;
     RequestParams params1;
-    String status_evaluation = "";
     Context context;
     float points = 0;
     private JsonPlaceHolderApi4 jsonPlaceHolderApi;
@@ -66,6 +63,7 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
         this.items = listItems;
         this.id_childPost = id_child;
         this.context = context;
+
 
 
 
@@ -82,14 +80,21 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
 
 
 
+
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull AvaliacaoAtividadeAdapter.ViewHolder holder, int position) {
+        final String[] status_evaluation = {""};
+        points = 0;
+
     holder.textTitle434345.setText(items.get(position).getTittle());
         holder.textLocation3464547.setText(items.get(position).getLocation());
         holder.timeActivity656576.setText(items.get(position).getTime());
+        id_request = 0;
         id_request = items.get(position).getId_item();
+
 
         //PUT DEFINITIONS
         Retrofit retrofit = new Retrofit.Builder()
@@ -102,11 +107,10 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
         //CHECK IF REQUEST WAS ALREADY EVALUATED
         //HTTP GET
         OkHttpClient client1 = new OkHttpClient();
-        System.out.println(id_childPost);
-        System.out.println(id_request);
 
 
-        String url = "http://188.82.156.135:8080/Back-end/EvaluationRequestGetId?id_child="+id_childPost+"&id_request="+id_request;
+
+        String url = "http://188.82.156.135:8080/Back-end/EvaluationRequestGetId?id_child="+id_childPost+"&id_request="+items.get(position).getId_item();
 
         Request request = new Request.Builder().url(url).build();
 
@@ -123,10 +127,17 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
 
                     try {
 
+
+
+
+
                         JSONObject root = new JSONObject(body);
                         System.out.println(root);
-                        status_evaluation = root.getString("STATUS");
-                        if (status_evaluation.equals("200")) {
+                        status_evaluation[0] = root.getString("STATUS");
+                        System.out.println("#######################");
+                        System.out.println( status_evaluation[0]);
+                        System.out.println("#######################");
+                        if (status_evaluation[0].equals("200")) {
 
                             JSONArray msg = root.getJSONArray("MSG");
 
@@ -136,8 +147,8 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
 
 
                                 // GET DATE AND FORMAT
-                                points = jsonItem.getInt("points");
-                                System.out.println(points);
+                                holder.rating_bar.setRating(jsonItem.getInt("points"));
+
 
 
                             }
@@ -145,21 +156,7 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
                             points = 0;
                         }
 
-                        //SET EVALUATION IF ALREADY DONE
-                        ((AppCompatActivity) context).runOnUiThread(() -> {
 
-                            if (status_evaluation.equals("200")){
-                                System.out.println(points);
-                                holder.rating_bar.setRating(points);
-                            } else {holder.rating_bar.setRating(points);}
-
-
-
-
-
-
-
-                        });
 
 
 
@@ -179,22 +176,28 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
 
+
+
+
                 points = holder.rating_bar.getRating();
 
-                if ( status_evaluation.equals("200")) {
+
+                if ( status_evaluation[0].equals("200")) {
                     System.out.println("Teste");
                     System.out.println(id_childPost);
-                    System.out.println(id_request);
+                    System.out.println(items.get(position).getId_item());
                     System.out.println(points);
 
 
 
-                    retrofit2.Call<ResponseBody> call = jsonPlaceHolderApi.putEvaluation(id_childPost, id_request, (int) points);
+                    retrofit2.Call<ResponseBody> call = jsonPlaceHolderApi.putEvaluation(id_childPost, items.get(position).getId_item(), (int) points);
                     call.enqueue(new retrofit2.Callback<ResponseBody>() {
                         @Override
                         public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
                             if (!response.isSuccessful()) {
                                 System.out.println(response);
+                                System.out.println("Problemas Bitch");
+
 
                             } else {
                                 System.out.println("Sucesso Bitch");
@@ -210,14 +213,16 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
                     });
 
 
+                    System.out.println("*******************************");
+
 
                 } else {
+
                     //FETCH POST
                     params = new RequestParams();
                     params.put("id_child", id_childPost);
-                    params.put("id_request", id_request);
+                    params.put("id_request", items.get(position).getId_item());
                     params.put("points", (int) rating);
-                    status_evaluation="200";
 
                     client = new AsyncHttpClient();
                     client.post(URL, params, new JsonHttpResponseHandler() {
@@ -237,6 +242,8 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
                             }
                             if (status.equals("200")) {
                                 System.out.println("Avaliado com sucesso");
+                               status_evaluation[0]="200";
+
 
 
                             }
@@ -257,7 +264,6 @@ public class AvaliacaoAtividadeAdapter extends RecyclerView.Adapter<AvaliacaoAti
                     });
 
                 }
-
 
 
 

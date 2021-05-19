@@ -21,6 +21,7 @@ public class MenuActivity extends AppCompatActivity {
     private Button btnHistoric;
     private Button btnSuggestions;
     private Button btnDefinitions, mapButton,historyBtn, gameEvaButton, profileButton;
+    private ImageView doubtsIcon;
 
 
     @Override
@@ -38,6 +39,7 @@ public class MenuActivity extends AppCompatActivity {
         btnSuggestions = (Button) findViewById(R.id.sugestionsButton);
         gameEvaButton = (Button) findViewById(R.id.gameEvaButton);
         profileButton = (Button) findViewById(R.id.profileButton);
+        doubtsIcon = findViewById(R.id.doubtsIcon);
 
 
 
@@ -163,6 +165,15 @@ public class MenuActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        doubtsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MenuActivity.this, com.example.kidsland.FAQActivity.class);
+                startActivity(intent);
+
+            }
         });
 
 

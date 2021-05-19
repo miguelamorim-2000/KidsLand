@@ -28,7 +28,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import cz.msebera.android.httpclient.Header;
 import okhttp3.Call;
@@ -82,6 +84,22 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
         holder.itemView.findViewById(R.id.textTitle4345).setPadding(0,40,20,40);
         holder.itemView.findViewById(R.id.textLocation3467).setPadding(0,30,20,40);
         holder.timeActivity.setText(items.get(position).getTime().toString());
+
+        SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy");
+        dateFormat1.setLenient(false);
+        dateFormat2.setLenient(false);
+        Date d = null;
+        String invalidDate =  items.get(position).getDate();
+        try {
+            d = dateFormat1.parse(invalidDate);
+        } catch (Exception e) {
+            System.out.println("reversed date " + invalidDate);
+        }
+        String newDate = dateFormat2.format(d);
+
+
+        holder.timeActivity673.setText(newDate);
 
         //IF CHILD HAS ALREADY SUBSCRIPTION TO ACTIVITY
         //HTTP GET
@@ -356,7 +374,7 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
         public ImageView activityLogo;
         public RecyclerView recyclerView;
         public Button participateBtn, participateBtn2;
-        public TextView timeActivity;
+        public TextView timeActivity, timeActivity673;
 
 
         public ViewHolder (View itemView){
@@ -368,6 +386,8 @@ public class AtividadesListAdapter extends RecyclerView.Adapter<AtividadesListAd
             participateBtn = itemView.findViewById(R.id.participatebtn98);
             participateBtn2 = itemView.findViewById(R.id.participatebtn276);
             timeActivity = itemView.findViewById(R.id.timeActivity676);
+            timeActivity673 = itemView.findViewById(R.id.timeActivity673);
+
 
 
 
